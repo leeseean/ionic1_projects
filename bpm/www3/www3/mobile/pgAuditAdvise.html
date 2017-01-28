@@ -1,0 +1,51 @@
+<style>
+    .loading-container .loading {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .spinner-ios {
+        text-align: center;
+    }
+    .scroll-content {
+        background-color: rgba(236, 233, 233, 0.32);
+    }
+
+</style>
+<ion-view  title="审批意见">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+
+   <!-- <ion-nav-buttons side="right">
+         <button class="button button-icon button-right button-clear " ng-click="approval()">确定</button>
+    </ion-nav-buttons>-->
+    <ion-content class="has-header" >
+       <ul style="  border: 1px  #CDC7C7;">
+        <!-- <li style="  border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">
+           <label class="item-input">
+             <span class="input-label" style="  font-weight: lighter;">常用意见</span>
+                <select style="width: 180">
+                <option selected></option>
+                <option></option>
+                <option ></option>
+                </select>
+           </label>
+         </li>-->
+        <!-- <li style="border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">-->
+
+           <!--  <label class="item-input"style="height: 200;display:block;">-->
+                 <div class="input-label" style="  font-weight: 200;    color: rgb(62, 62, 60);  padding-left: 10px;
+  padding-top: 21px;">填写意见</div>
+                 <div><input type="text" value="审批通过" id="opiontext" placeholder="请输入意见"  style="  font-weight: 200;  border: 1px solid #CDC7C7;  height: 160px;margin-top: 8px;  padding-bottom: 121px;padding-left: 11px;font-size: large;"></div>
+            <!-- </label>-->
+
+        <!-- </li>-->
+       </ul>
+    </ion-content>
+    <ion-footer-bar >
+        <div style="width: 100%;text-align: center">
+            <button class="button button-assertive" ng-click="approval()" style="width: 98%;border-radius: 3%;letter-spacing:7px; font-size: large;" >确定</button>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

@@ -1,0 +1,18 @@
+<ion-content>
+
+    <div class="light-bg">
+
+        <ion-refresher pulling-text="下拉刷新" on-refresh="getEcpExLzNews(true)"></ion-refresher>
+        <div class="list">
+            <div class="item item-text-wrap" collection-repeat="item in marketNews" item-height="100">
+                <h2>{{item.LzTitle}}</h2>
+
+                <p class="text-right"><a class="subdued">{{item.LzRq}}</a></p>
+            </div>
+        </div>
+
+        <ion-infinite-scroll on-infinite="getEcpExLzNews(false)" distance="10%"
+                             ng-if="canLoadMore"></ion-infinite-scroll>
+    </div>
+
+</ion-content>

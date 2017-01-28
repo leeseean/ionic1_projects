@@ -1,0 +1,156 @@
+<ion-view view-title="委托详情">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear" ng-click="remark()" style="color: white">
+      备注
+    </button>
+    <button class="button button-clear" ng-click="import()" style="color: white">
+      导入
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="height4 line-height4">
+    	<span class="fs16 fw800 ml1">委托头信息</span>
+    </div>
+    <div class="row text-center bg-thead thead-color">
+        <div class="col">客户名称</div>
+        <div class="col">经营组织</div>
+        <div class="col">协议编号</div>
+        <div class="col">电子委托编号</div>
+        <div class="col">协议开始时间</div>
+        <div class="col">委托截止时间</div>
+    </div>
+    <div class="row text-center border-btm">
+        <div class="col padding-top">
+        山东惠民国胜金属有限公司
+        </div>
+        <div class="col padding-top">
+        山东京博石化化工有限公司
+        </div>
+        <div class="col height3 line-height3">
+        SH16040106
+        </div>
+        <div class="col height3 line-height3">
+        WT603220064
+        </div>
+        <div class="col padding-top">
+        16-04-18<br>17：26：21
+        </div>
+        <div class="col time-color padding-top">
+        16-04-18<br>17：26：21
+        </div>
+    </div>
+    <div class="height4 line-height4">
+        <span class="fs16 fw800 ml1">委托行信息</span>
+    </div>
+    <div class="row text-center bg-thead thead-color" ng-show="flag">
+        <div class="col text-left line-height2">92号车用汽油</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col text-right" ng-click="delete()">
+        <i class="icon ion-trash-b inline-block height2 line-height2 width2 text-center border-r1 white ml1 mr1-half bg-delete">
+        </i>
+        删除
+        </div>
+    </div>
+    <div class="row text-center border-btm" ng-show="flag">
+        <div class="col height3 line-height3">
+        数量
+        </div>
+        <div class="col height3 line-height3">
+        车牌号
+        </div>
+        <div class="col height3 line-height3">
+        司机名称
+        </div>
+        <div class="col height3 line-height3">
+        身份证号
+        </div>
+        <div class="col height3 line-height3">
+        手机号
+        </div>
+        <div class="col height3 line-height3">
+        价格
+        </div>
+    </div>
+    <div class="row text-center" ng-show="flag">
+        <div class="col height3 line-height3">
+        90
+        </div>
+        <div class="col height3 line-height3">
+        粤A55210
+        </div>
+        <div class="col height3 line-height3">
+        王小锤
+        </div>
+        <div class="col height3 line-height3">
+        411031052201523220
+        </div>
+        <div class="col height3 line-height3">
+        13544875564
+        </div>
+        <div class="col height3 line-height3">
+        2700
+        </div>
+    </div>
+    <div class="row text-center height4 bg-even border-btm" ng-show="flag">
+    备注:
+    </div>
+    <div class="row text-center bg-thead thead-color height3" ng-show="flag1">
+        <div class="col text-left line-height2">92号车用汽油</div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col"></div>
+        <div class="col text-right" ng-click="delete1()">
+        <i class="icon ion-trash-b inline-block height2 line-height2 width2 text-center border-r1 white ml1 mr1-half bg-delete">
+        </i>
+        删除
+        </div>
+    </div>
+    <div class="row text-center border-btm" ng-show="flag1">
+        <div class="col height3 line-height3">
+        数量
+        </div>
+        <div class="col height3 line-height3">
+        车牌号
+        </div>
+        <div class="col height3 line-height3">
+        司机名称
+        </div>
+        <div class="col height3 line-height3">
+        身份证号
+        </div>
+        <div class="col height3 line-height3">
+        手机号
+        </div>
+        <div class="col height3 line-height3">
+        价格
+        </div>
+    </div>
+    <div class="row text-center" ng-show="flag1">
+        <div class="col height3 line-height3">
+        90
+        </div>
+        <div class="col height3 line-height3">
+        粤A55210
+        </div>
+        <div class="col height3 line-height3">
+        王小锤
+        </div>
+        <div class="col height3 line-height3">
+        411031052201523220
+        </div>
+        <div class="col height3 line-height3">
+        13544875564
+        </div>
+        <div class="col height3 line-height3">
+        2700
+        </div>
+    </div>
+    <div class="row text-center height4 bg-even border-btm" ng-show="flag1">
+    备注:
+    </div>
+  </ion-content>
+</ion-view>

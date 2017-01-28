@@ -1,0 +1,86 @@
+<ion-view view-title="排班表">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('home')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="doSomething()">
+        今天
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content>
+    <div class="padding">
+        <onezone-datepicker datepicker-object="onezoneDatepicker"><!-- datepicker-object="onezoneDatepicker" -->
+            <button class="button button-block button-outline button-positive show-onezone-datepicker">
+                {{onezoneDatepicker.date | date:'dd MMMM yyyy'}}
+            </button>
+        </onezone-datepicker>
+    </div>
+    <div class="padding-left padding-right">
+      <ion-list>
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <!-- <ion-list ng-switch-when="No2">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-switch-when="No3">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-switch-when="No4">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-switch-when="No5">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-switch-when="No6">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list>
+      <ion-list ng-switch-when="No7">
+        <ion-item ng-repeat="schedule in schedules" class="row color93 mt-10 noTopBorder">
+          <div class="col">{{schedule.name}}</div>
+          <div class="col">{{schedule.num}}</div>
+          <div class="col">{{schedule.order}}</div>
+          <div class="col">{{schedule.time}}</div>
+        </ion-item>
+      </ion-list> -->
+    </div>
+    <div class="padding">
+        <button class="button button-block button-outline button-positive" ng-click="showDatepicker()">
+            {{onezoneDatepicker.showDatepicker?'收起':'展开'}}
+        </button>
+    </div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,26 @@
+<ion-view view-title="费用报销">
+    <!-- <ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-ios-arrow-back" ng-click="">  
+      </button>
+    </ion-nav-buttons> -->
+    <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-paperclip" ng-click="">  
+      </button>
+    </ion-nav-buttons>
+    <ion-content>
+      <div class="row" style="padding: 0">
+	      <a class="button button-light col col-50" style="padding: 0;border-radius: 0">
+	      	<span style="display: inline-block;height: 2em;width: 2em;position: absolute;top: 0.4em;left: 3em;background: red;border-radius: 1em"></span>
+	      	  <i class="icon ion-clipboard" style="position: absolute;left: 3.5em;color: white"></i>	
+	      	<span style="position: absolute;left: 5em;font-weight: bold;">&nbsp;&nbsp;查看表单</span>
+	      </a>
+	      <a class="button button-light col col-50" style="padding: 0;border-radius: 0">
+	      	<span style="display: inline-block;height: 2em;width: 2em;position: absolute;top: 0.4em;left: 3em;background: #57b4fa;border-radius: 1em"></span>
+	      	  <i class="icon ion-eye" style="position: absolute;left: 3.4em;color: white"></i>	
+	      	<span style="position: absolute;left: 5em;font-weight: bold;">&nbsp;&nbsp;审批进度</span>
+	      </a>
+      </div>
+      <div ng-include="'templates/sheet1_1.html'"></div>
+      <!-- <div ng-show="!test" ng-include="'sheet1_2.html'"></div> -->
+    </ion-content>
+</ion-view>

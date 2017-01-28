@@ -1,0 +1,148 @@
+<ion-view view-title="移动Kronos">
+<ion-nav-bar class="bar bar-dark">
+  <ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="exit()">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+  </ion-nav-buttons>
+</ion-nav-bar>
+    <ion-content>
+      <div class="bg-kronos height15" style="margin-bottom: -5px"></div>
+      <div class="row">
+        <div class="col bg-a padding m10" ng-click="$state.go('page11')">
+          <div class="height6 text-center">
+            <img src="img/1.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-a1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            事项申请
+          </div>
+        </div>
+        <div class="col bg-b padding m10" style="margin-left: 0;" ng-click="$state.go('page4')">
+          <div class="height6 text-center">
+            <img src="img/2.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-b1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            班次管理
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col bg-c padding m10" style="margin-top: 0" ng-click="$state.go('page15')">
+          <div class="height6 text-center">
+            <img src="img/3.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-c1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            工时管理
+          </div>
+        </div>
+        <div class="col bg-d padding m10" style="margin-top: 0;margin-left: 0" ng-click="$state.go('page10')">
+          <div class="height6 text-center">
+            <img src="img/4.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-d1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            假期余额
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col bg-e padding m10" style="margin-top: 0" ng-click="$state.go('page8')">
+          <div class="height6 text-center">
+            <img src="img/5.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-e1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            考勤异常查询
+          </div>
+        </div>
+        <div class="col bg-f padding m10" style="margin-top: 0;margin-left: 0" ng-click="$state.go('page13')">
+          <div class="height6 text-center">
+            <img src="img/6.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-f1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            排班管理
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col bg-e padding m10" style="margin-top: 0" ng-click="$state.go('page8')">
+          <div class="height6 text-center">
+            <img src="img/5.png" style="height: 6em;padding: 1em">
+          </div>
+          <div class="height2 bg-e1 text-center fz24 white line-height2" style="margin-top: -0.5em">
+            考勤异常查询
+          </div>
+        </div>
+      </div> -->
+     <!--  <div class="row pl0 pr0">
+        <div class="col pl0">
+          <div class="height8 text-center bg-a" ng-click="$state.go('page8')">
+            <div class="height3 line-height3 fz24"><i class="icon ion-ios-world"></i></div>
+            <div class="white height1 fz20">
+              考勤异常查询
+            </div>
+          </div>
+          <div class="row height4 bg-b text-center mt1em" ng-click="$state.go('page10')">
+            <div class="col fz24" style="padding:0.5em">
+              <i class="icon ion-eject"></i>
+            </div>
+            <div class="col white fz20 fw500" >
+              假期<br>余额
+            </div>
+          </div>
+        </div>
+        <div class="col pr0">
+          <div class="row bg-c height6 text-center" ng-click="$state.go('page4')">
+            <div class="col fz24" style="padding: 1.2em">
+              <i class="icon ion-ios-time-outline"></i>
+            </div>
+            <div class="col-80 white fz20 fw500 text-left" style="padding: 1em" >
+            班次<br>管理
+            </div>
+          </div>
+          <div class="row bg-d height6 text-center" style="margin-top: 1em" ng-click="$state.go('page11')">
+            <div class="col fz24" style="padding: 1.2em">
+              <i class="icon ion-ios-email-outline"></i>
+            </div>
+            <div class="col-80 white fz20 fw500 text-left" style="padding: 1em">
+            事项<br>申请
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-e height6 text-center" style="margin-top: 0.3em" ng-click="$state.go('page15')">
+        <div class="col fz24" style="padding: 1.4em">
+          <i class="icon ion-ios-timer"></i>
+        </div>
+        <div class="col-60 white fz24 fw500" style="padding: 1.3em">
+        工时管理
+        </div>
+      </div> -->
+     <!--  <div ng-click="$state.go('page1')" class="padding text-center fz20 colorOrange">
+      工时填报
+      </div>
+      <div ng-click="$state.go('page2')" class="padding text-center fz20 colorGreen">
+      工时填报（批量）
+      </div> -->
+     <!--  <div ng-click="$state.go('page3')" class="padding text-center fz20 colorOrange">
+      个人排班表
+      </div> -->
+      <!-- <div ng-click="$state.go('page4')" class="padding text-center fz20 colorGreen">
+      个人排班表详情
+      </div>  -->
+     <!--  <div ng-click="$state.go('page5')" class="padding text-center fz20 colorOrange">
+      我的流程
+      </div> -->
+      <!-- <div ng-click="$state.go('page7')" class="padding text-center fz20 colorGreen">
+      加班申请单
+      </div> -->
+     <!--  <div ng-click="$state.go('page8')" class="padding text-center fz20 colorOrange">
+      考勤记录
+      </div> -->
+      <!-- <div ng-click="$state.go('page13')" class="padding text-center fz20 colorGreen">
+      排班表
+      </div> -->
+      <!-- <div ng-click="$state.go('page12')" class="padding text-center fz20 colorOrange">
+      请假详情
+      </div>
+ -->
+    </ion-content>
+</ion-view>

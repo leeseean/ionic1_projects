@@ -1,0 +1,23 @@
+<ion-view view-title="最新资讯" hide-nav-bar="true">
+  <ion-content>
+    <tabs-slide-box tab="0">
+        <div class="navbar">
+            <div class="weui_tab">
+                <div class="weui_navbar">
+                    <div class="weui_navbar_item weui_bar_item_on">热点新闻</div>
+                    <div class="weui_navbar_item">市场行情</div>
+                </div>
+                <div class="weui_tab_bd"></div>
+            </div>
+        </div>
+        <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index);">
+            <ion-slide>
+                <div ng-include="'templates/hot_news.html'"></div>
+            </ion-slide>
+            <ion-slide>
+                <div ng-include="'templates/market_news.html'"></div>
+            </ion-slide>
+        </ion-slide-box>
+    </tabs-slide-box>
+  </ion-content>
+</ion-view>

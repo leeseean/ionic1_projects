@@ -1,0 +1,23 @@
+<style>
+    .iframescroll{
+        -webkit-overflow-scrolling: touch !important;overflow: scroll !important;width: 100%;height: 100%;
+    }
+
+</style>
+<ion-view  title="表单详细" id="auditFormDetial">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+
+    <ion-content  scroll="true" class="has-header stable-bg gallerySider_content padding iframescroll">
+            <iframe style=" height: 100%;width: 100%" ng-src="{{targetUrl}}"></iframe>
+
+        <!------------------------解决手机上显示button问题----------------------->
+        <div style="text-align: center;padding-top: 10;width: 100%;float:left;visibility:hidden;">
+            <button class="button button-balanced" style="height: 18;width: 95%;" >
+            </button>
+        </div>
+    </ion-content>
+
+</ion-view>

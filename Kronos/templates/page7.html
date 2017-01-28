@@ -1,0 +1,140 @@
+<ion-view view-title="加班申请单">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="back()">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="submit()">
+        提交
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content>
+    <div class="list list-inset">
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+        </span>
+        <input type="text" placeholder="黎明" style="padding-left: 4em"
+        ng-model="overtime.name" readonly="readonly">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder1">
+        <span class="input-label fz20 bold">
+        工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号
+        </span>
+        <input type="text" placeholder="6602220" style="padding-left: 4em" 
+        ng-model="overtime.ID" readonly="readonly">
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        加班日期
+        </span>
+        <input type="text" placeholder="2016年5月3日" style="padding-left: 4em" 
+        ng-model="submitData.createDate" ng-click="selectTime()">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        加班开始时间
+        </span>
+        <input type="time" placeholder="8：30" style="padding-left: 4em" 
+        ng-model="overtime.start" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        加班结束时间
+        </span>
+        <input type="time" placeholder="18：30" style="padding-left: 4em"
+        ng-model="overtime.end" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        加班时数
+        </span>
+        <input type="text" placeholder="8" style="padding-left: 4em" 
+        ng-model="overtime.total">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        休假原因
+        </span>
+        <input type="text" placeholder="清洁" style="padding-left: 4em"
+        ng-model="overtime.reason">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态
+        </span>
+        <input type="text" placeholder="审核中" style="padding-left: 4em"
+        ng-model="overtime.status">
+      </label>
+    </div>
+      <!-- <div class="list padding-left padding-right">
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          姓<span style="margin-left: 2em">名</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.name}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          工<span style="margin-left: 2em">号</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.ID}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          加班日期</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.overDate}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          开始时间</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.start}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          结束时间</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.end}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          加班时数</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.total}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          加班原因
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.reason}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder" style="line-height: 2.7em;border-bottom: 2px solid #ebebeb">
+          <div class="col col-30 text-justify fz20 bold">
+          状<span style="margin-left: 2em">态</span>
+          </div>
+          <div class="col col-50 text-center color93">{{overtime.status}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+      </div> -->
+	</ion-content>
+	<ion-footer-bar class="bar bar-footer bar-stable">
+	</ion-footer-bar>
+</ion-view>

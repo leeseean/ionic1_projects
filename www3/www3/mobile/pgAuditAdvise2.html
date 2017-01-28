@@ -1,0 +1,67 @@
+<style>
+    .loading-container .loading {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .spinner-ios {
+        text-align: center;
+    }
+    .scroll-content {
+        background-color: rgba(236, 233, 233, 0.32);
+    }
+</style>
+<ion-view  title="驳回意见">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+
+        </button>
+    </ion-nav-buttons>
+
+
+   <!-- <ion-nav-buttons side="right">
+         <button class="button button-icon button-right button-clear " ng-click="reject()">确定</button>
+    </ion-nav-buttons>-->
+    <ion-content class="has-header">
+       <ul style="  border: 1px  #CDC7C7;">
+        <!-- <li style="  border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">-->
+           <label class="item-input" style="background-color: white;margin-top: 25px;">
+             <span class="input-label" style="  font-weight: 200;font-size: medium;">驳回至：</span>
+               <div style="  width: 80%; font-weight: 200;font-size: medium;">{{activityinstNDataString}}</div>
+               <div style="  width: 30%;text-align: left;"><button class="ion-ios7-arrow-down"ng-click="choose()"style=" height: inherit; border: none;background-color: white;color: rgb(74, 135, 238);  font-size: 1.5rem;"></button>
+               </div>
+           </label>
+        <!-- </li>-->
+          <!-- <li style="  border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">-->
+               <label class="item-input" style="background-color: white;margin-top: 25px;">
+                   <span class="input-label" style="  font-weight: 200;font-size: medium;">重启方式：</span>
+                   <select style="width: 180;  font-weight: 200;border: none;font-size: medium;" id="select">
+                       <option value="1" selected>按原步骤进行</option>
+                       <option value="2">直接回到本活动</option>
+
+                   </select>
+               </label>
+         <!--  </li>-->
+          <!-- <li style="  border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">
+               <label class="item-input">
+                   <span class="input-label" style="  font-weight: lighter;">常用意见</span>
+                   <select style="width: 180">
+                       <option selected></option>
+                       <option></option>
+                       <option ></option>
+                   </select>
+               </label>
+           </li>-->
+         <!--  <li style="  border: 1px solid #CDC7C7;border-radius: 8px;margin:10px;padding:0px">
+               <label class="item-input"style="height: 100;">-->
+                   <span class="input-label" style="  font-weight: 100;margin-top: 13px;margin-left: 8px;">请填写意见</span>
+                   <input type="text" value="驳回" id="opiontext" placeholder="请输入意见"  style="   font-weight: 200;font-size: medium; border: 1px solid #CDC7C7; padding-bottom: 121px;padding-left: 11px; height: 160;">
+      <!--         </label>
+           </li>-->
+       </ul>
+    </ion-content>
+    <ion-footer-bar >
+        <div style="width: 100%;text-align: center">
+            <button class="button button-assertive" ng-click="reject()" style="width: 98%;border-radius: 3%;letter-spacing:7px; font-size: medium;" >确定</button>
+        </div>
+    </ion-footer-bar>
+
+</ion-view>

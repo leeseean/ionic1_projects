@@ -1,0 +1,34 @@
+.button-badge-background{padding: 2px 4px 1px; min-width: 12px; min-height: 12px; font-size: 12px; line-height: 12px;
+    border-radius: 12px; margin: 10px 10px 0px 10px;}
+.badge-text{  margin: 10px 10px 0px 10px; color: #b2b2b2;}
+.button-normal{  padding: 2px 4px 1px;  min-width: 22%;  min-height: 40px; font-size: 15px; line-height: 26px;
+    margin: 10px 5% 10px 5%;}
+.icon-Button{margin:10px;}
+.number-Button{  min-width: 10px;min-height: 10px;border-radius: 20px;max-height: 30px;
+    margin: 8px 0px 0px 0px;text-align: center;line-height: 25px;background: #e8e8e8;}
+.listCorner-text{  margin: 10px 10px 0px 0px; color: #b2b2b2;}
+.listCorner{  min-height: 20px !important; max-height: 20px !important; min-width: 20px !important;
+    border-radius: 30px !important; font-size: 17px !important; margin: 7px !important;}
+.listCorner-arrow{  min-height: 20px !important;min-width: 20px !important;max-height: 20px !important;
+    text-align: center !important;line-height: 14px !important;border-radius: 20px !important;
+    font-size: 17px !important;}
+.listWidget{font-size: 12px !important;  width: 70px; text-align: center; padding: 0px 0px 0px 18px;}
+.medialist-h1{font-size: 25px !important;}
+.medialist-img{width: 60px !important;height: 60px !important;}
+.medialist-li-left{min-height: 80px;padding-top: 12px; padding-left: 80px;}
+.medialist-li-right{min-height: 80px;padding-top: 12px; padding-left: 10px;}
+.medialist-text{margin: 10px;}
+.threeline-time{font-size: 17px !important;color: #999 !important;height: 50px !important;}
+.threeline-li-right{min-height: 80px; padding-top: 12px; padding-left: 10px; padding-right: 65px;}
+.threeline-text{color: #999;}
+.center{text-align: center;}
+.icons-font{font-size:18px; }
+.icon-ul{ font-size: 45px; padding: 0px 5pt 0px 0pt; text-align: center; display: block; width: 100%; height: 100%;}
+.icons-li{ height: 20%; width: 20%; float:left;}
+.sie-selected .selected {color: #387ef5 !important;}
+.unselected{ color:#ddd;}
+.before { width: 40px; content: "\f14b"; height: 40px; background-color: #fff; line-height: 40px; border-radius: 40px;
+    border: 1px solid #ddd; margin: 10px; font-size: 25px; margin: 0px 5% 10px 5% !important;}
+.list-text{text-align: center;}
+.sie-icon-div{ width: 25%; padding: 10px 5% 0px 5%; float: left;}
+.sie-icon-div2{  text-align: center; width: 90%; height: 100%; padding-left: 9%;}

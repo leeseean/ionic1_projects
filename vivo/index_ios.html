@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+      <link href="css/ionic.css" rel="stylesheet">
+      <link href="css/imgCss.css" rel="stylesheet">
+      <script src="js/ionic.bundle.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/cordova/wpt-1.0.0.js"></script>
+      <script>
+          //wpt.checkPlatform();
+          var appMain = angular.module('app', ['ionic']);
+          //var sshFileUrl ="";
+          //var sshFileUrl ="https://vchat.vivo.com.cn:8443/vivo/bpmH5/bpm_detail/";//正式vivo
+          var sshFileUrl ="https://221.4.142.106:8443/vivo/bpmH5/bpm_detail/";//测试vivo
+          document.write('<script type="text/javascript" src="'+sshFileUrl+'js/loadFile.js?r='+t+'"></scr'+'ipt>');
+          document.onreadystatechange=function(){
+              if (document.readyState == "complete"&&!window.isLoaded) {
+                  appMain.config(function ($stateProvider, $urlRouterProvider) {
+                      document.title = "页面加载失败";
+                      $stateProvider
+                              .state('loaderror', {
+                                  url: '/loaderror',
+                                  cache: true,
+                                  templateUrl: "templates/loaderror.html"
+                              });
+                      $urlRouterProvider.otherwise('/loaderror');
+                  });
+                  angular.element(document).ready(function() {
+                    angular.bootstrap(document, ['app']);
+                  });
+              }
+          }
+
+      </script>
+  </head>
+  <body ng-app id="app">
+  <ion-nav-view>
+  </ion-nav-view>
+  <script id="templates/loaderror.html" type="text/ng-template">
+      <ion-view>
+          <style>
+              .vivo-list-nodata {
+                  position: absolute;
+                  width: 100%;
+                  text-align: center;
+                  left: 0;
+                  top: 179px;
+                  font-size: 30px;
+                  line-height: 40px;
+                  color: #e6e4e4;
+                  text-shadow: rgba(255,255,255,0.57) 0 5px 6px,rgba(255,255,255,0.2) 1px 3px 3px;
+                  letter-spacing: .04em;
+              }
+          </style>
+          <ion-content class="stable-bg">
+              <div class="vivo-list-nodata">页面加载失败<br>请检查网络连接</div>
+          </ion-content>
+      </ion-view>
+  </script>
+  <script id="templates/error.html" type="text/ng-template">
+      <ion-view>
+          <ion-content class="stable-bg">
+              <div class="vivo-list-nodata">暂不支持该类型流程</div>
+          </ion-content>
+      </ion-view>
+  </script>
+  </body>
+</html>

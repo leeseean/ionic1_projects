@@ -1,0 +1,75 @@
+/* Empty. Add your own CSS if you like */
+.weui_grid {
+    width: 25% !important;
+    padding: 10px !important;
+}
+
+.weui_grid p {
+    margin: 0;
+}
+
+.weui_grid_label {
+    font-size: 13px !important;
+}
+
+.icon-png {
+    background-size: 100% !important;
+    display: inline-block;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+}
+
+.icon-activity {
+    background: url('../img/ic_activity_remark.png') no-repeat;
+}
+
+.icon-activity-clock {
+    background: url('../img/ic_activity_clock.png') no-repeat;
+}
+
+.item.no-top-padding {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.box {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-right {
+    border: solid #ddd;
+    border-width: 0 1px 0 0;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.parent-65 {
+    width: 65%;
+}
+
+/*垂直居中*/
+.vertical-center-parent {
+    position: relative;
+}
+
+.vertical-center-child {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+}
+/*add 2016.6.16 Q*/
+.bg_bar{background:#9e9e9e;color: #fff;}
+.fs2rem{font-size: 2rem;}
+.fs48{font-size: 48px;}
+.fw900{font-weight: 900}
+.mb1rem{margin-bottom: 1rem}
+.mt2rem{margin-top: 2rem}
+.button{min-height: 42px}

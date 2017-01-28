@@ -1,0 +1,42 @@
+<style>
+    .button.button-assertive {
+        border-color: #EF4E3A;
+    }
+    .button.button-assertive.active, .button.button-assertive.activated {
+        border-color: #EF4E3A;
+        background-color: #EF4E3A;
+
+    }
+    .tab-nav>a:hover,a:focus {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .tab-item.tab-item-active:hover,.tab-item.tab-item-active:focus {
+        color: rgb(41, 117, 244);
+    }
+</style>
+<ion-tabs class="tabs-icon-top">
+
+    <ion-tab title="待办" icon="ion-ios7-alarm-outline" ui-sref="home.showTodo">
+        <ion-nav-view name="showTodo-tab"></ion-nav-view>
+    </ion-tab>
+    <!--<div ng-show="badgeShow"> <span class="button button-assertive button-small button-badge-background" style="position: absolute;  height: 19;
+    width: 19; left: 13.5%;border-radius: 50%;top:-19%;">
+             <div style=" position: inherit;width: 22px;left: -0.25rem;  top: 0.25rem;">
+                 {{itemsLength}}
+            </div>
+        </span>
+    </div>-->
+ 
+    <ion-tab title="发起" icon="ion-ios7-compose-outline" ui-sref="home.formList">
+        <ion-nav-view name="formList-tab"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="已办" icon="ion-ios7-bookmarks-outline" ui-sref="home.showHis">
+        <ion-nav-view name="showHis-tab"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="我的流程" icon="ion-ios7-contact-outline" ui-sref="home.showStartup">
+        <ion-nav-view name="showStartup-tab"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

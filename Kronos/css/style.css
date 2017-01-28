@@ -1,0 +1,124 @@
+/*input::-ms-input-placeholder{text-align: center;}
+input::-webkit-input-placeholder{text-align: center;}*/
+.bar-header{margin-top:-17px !important;}
+.scroll-content{margin-top: -19px}
+.white{color:white;}
+.text-justify{text-align: justify;}
+.bold{font-weight: bold}
+.fw400{font-weight: 400}
+.fw500{font-weight: 500}
+.fw600{font-weight: 600}
+.fw800{font-weight: 800}
+.fz10{-webkit-text-size-adjust:none !important;font-size: 10px;*font-size:10px;}
+.fz12{font-size: 12px}
+.fz14{font-size: 14px}
+.fz16{font-size: 16px}
+.fz18{font-size: 18px}
+.fz20{font-size: 20px}
+.fz22{font-size: 22px}
+.fz24{font-size: 24px}
+.height1{height: 1em;}
+.height2{height: 2em;}
+.height3{height: 3em;}
+.height4{height: 4em;}
+.height6{height: 6em;}
+.height7{height: 7em;}
+.height8{height: 8em;}
+.height10{height: 10em;}
+.height15{height: 15em;}
+.width6{width: 6em;}
+.line-height1{line-height: 1em}
+.line-height2{line-height: 2em}
+.line-height3{line-height: 3em}
+.line-height4{line-height: 4em}
+.m10{margin: 10px;}
+.mt5{margin-top: 5px}
+.ml5{margin-left: 5px}
+.mr5{margin-right: 5px}
+.ml10{margin-left: 10px}
+.mr10{margin-right: 10px}
+.mt-10{margin-top: -10px}
+.mt10{margin-top: 10px}
+.mt20{margin-top: 20px}
+.mt1em{margin-top: 1em}
+.ml1em{margin-left: 1em}
+.ml2em{margin-left: 2em}
+.ml-1em{margin-left: -1em}
+.ml-2em{margin-left: -2em}
+.mt4em{margin-top: 4em}
+.mb10{margin-bottom: 10px}
+.mb1em{margin-bottom: 1em}
+.mb2em{margin-bottom: 2em}
+.mb3em{margin-bottom: 3em}
+.pb0{padding-bottom: 0}
+.pt0{padding-top: 0}
+.pl0{padding-left: 0}
+.pr0{padding-right: 0}
+.pt1em{padding-top: 1em}
+.pt2em{padding-top: 2em}
+.pt15{padding-top: 15px}
+.pb1em{padding-bottom: 1em}
+.pb2em{padding-bottom: 2em}
+.pb15{padding-bottom: 15px}
+.pl20{padding-left: 20px}
+.pl1em{padding-left: 1em}
+.pl2em{padding-left: 2em}
+.pl4em{padding-left: 4em}
+.pr1em{padding-right: 1em}
+.pr2em{padding-right: 2em}
+.col-10{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 10%;max-width: 10%}
+.col-15{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 15%;max-width: 15%}
+.col-20{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 20%;max-width: 20%}
+.col-26{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 26%;max-width: 26%}
+.col-27{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 27%;max-width: 27%}
+.col-28{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 28%;max-width: 28%}
+.col-29{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 29%;max-width: 29%}
+.col-30{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 30%;max-width: 30%}
+.col-31{-webkit-box-flex: 0;-moz-box-flex: 0;flex: 0 0 31%;max-width: 31%}
+.color93{color: #939393}
+.colorBlue{color: #153da0}
+.colorLight{color: #d5d7f1}
+.colorOrange{color: #f1b874}
+.colorBlack{color:#353535}
+.colorGreen{color: #8fceb4}
+.colorRed{color: #fa92aa}
+.noBorder{border: 0;}
+.noTopBorder{border-top: 0}
+.btmBorder{border-bottom: 6px solid #ebebeb}
+.btmBorder1{border-bottom: 1px solid #ebebeb}
+.btmBorder2{border-bottom: 2px solid #ebebeb}
+.borderRight{border-right: 1px solid #e8e8e8}
+.radius1em{border-radius: 1em}
+.radius2em{border-radius: 2em}
+.radius3em{border-radius: 3em}
+.bg-gray{background: #f0f2f1}
+.bg-white{background: #ffffff}
+.bg-blue{background: #1a88c1}
+.bg-agree{background: #1fb882}
+.bg-forbid{background: #ea5e5e}
+.bg-reset{background: #b95173}
+.bg-a{background:#ff677b}
+.bg-a1{background:#ff8d9c}
+.bg-b{background:#fe864a}
+.bg-b1{background:#fea477}
+.bg-c{background:#f4b613}
+.bg-c1{background:#f7c84e}
+.bg-d{background:#84d018}
+.bg-d1{background:#a3dc52}
+.bg-e{background:#368ff5}
+.bg-e1{background:#68abf8}
+.bg-f{background: #6a41de}
+.bg-f1{background: #7954e1}
+.required {color: red;}
+.fixBtm{position: fixed;bottom: 0;height: 6em;width: 100%}
+.bg-kronos{background-image: url(../img/bg-kronos.png);
+		   background-position: center center;
+		   background-repeat: no-repeat;
+		   /*background-attachment: fixed;*/
+		   background-size: 100% 100%;}
+.inline-block{display: inline-block;}
+.popover {height: auto !important;}
+/*.popover ion-header-bar {position: relative;}*/
+.popover ion-content {top: 0;position: relative;}
+.popover ion-content ion-list {position: absolute;right: 0;background: #385d8a !important;}
+.popover ion-content ion-list ion-item {padding: 10px;background: #4f81bd !important;}

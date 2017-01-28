@@ -1,0 +1,80 @@
+.action-sheet .button {
+    text-align: center!important;
+    display: block;
+    padding: 1px;
+    width: 100%;
+    border-radius: 0;
+    border-color: #d1d3d6!important;
+    background-color: transparent;
+    color: #007aff!important;
+    font-size: 21px!important;
+}
+
+.action-sheet-cancel {
+    display: block!important;
+}
+.action-sheet {
+    margin-left: 8px!important;
+    margin-right: 8px!important;
+    width: auto;
+    z-index: 11;
+    overflow: hidden;
+}
+
+.action-sheet-group {
+    margin-bottom: 8px!important;
+    border-radius: 4px!important;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.popover-arrow {
+    position: absolute;
+    display: block;
+    top: -19px!important;
+    width: 30px;
+    height: 19px;
+    overflow: hidden;
+}
+.popover-arrow:after {
+    position: absolute;
+    top: 12px;
+    left: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 3px;
+    content: '';
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.popover {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    z-index: 10;
+    display: block;
+    margin-top: 12px;
+    margin-left: -110px;
+    width: 189px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    opacity: 0.7;
+    top: 77px!important;
+}
+.platform-android .popover .item {
+ border-color: #fafafa;
+ background-color: #fff;
+ color: #4d4d4d;
+}
+.platform-android .popover {
+    background-color: #fff!important;
+}
+
+.col-20{
+    width: 20%!important;
+}
+.col-40{
+    width: 40%!important;
+}

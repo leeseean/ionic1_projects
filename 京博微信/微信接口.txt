@@ -1,0 +1,23 @@
+﻿绑定微信帐号
+createWechatRelation
+var param = {'params':'{"varQueryUserName":"演示账号","varQueryEncrytedPassword":"1f82c942befda29b6ed487a51da199f78fce7f05","varOpenId":"1"}','pageIndex':1,'pageRows':10};
+
+用微信opneid登陆返回信息
+http://222.134.52.35:7070/JBEcpInServiceApp/inAction?name=loginWechat
+var param = {'openId':'356a192b7913b04c54574d18c28d46e6395428ab'};
+
+新建留言
+createMessage;
+var param = {'params':'{"varMsgTitle":"lzh测试留言板","varMsgContent":"lzh测试留言板","varName":"林锺豪","varSex":"男","varEmail":"80980@qq.com","varPhone":"1212312","varTime":"2016-06-02 15:04:30","varType":"CIVIL"}','pageIndex':1,'pageRows':10,'openId':'356a192b7913b04c54574d18c28d46e6395428ab'};
+
+获取自己的留言和对应的回复
+getMessage';
+var param = {'params':'{"varMessageId":""}','pageIndex':1,'pageRows':10,'openId':'356a192b7913b04c54574d18c28d46e6395428ab'};
+
+解绑
+var target= 'http://127.0.0.1:7101/JBEcpInServiceApp/inAction?name=endWechatRelation';
+var param = {'openId':'356a192b7913b04c54574d18c28d46e6395428ab'};
+
+调用商城接口
+var target= 'http://127.0.0.1:7101/JBEcpInServiceApp/inAction?name=searchEcpExDeliveryHeaders';
+var param = {'params':'{"varCustomerId":"","varQueryDeliveryHeadId":""}','pageIndex':1,'pageRows':10,'openId':'356a192b7913b04c54574d18c28d46e6395428ab'};

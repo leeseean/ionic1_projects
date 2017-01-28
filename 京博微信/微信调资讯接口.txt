@@ -1,0 +1,3 @@
+var target= 'http://127.0.0.1:7101/JBEcpInServiceApp/inAction?name=getEcpExLzNews';
+
+var param = {'params':'{"varNewId":"","varLzTitle":"","varLzKeyword":"","varClassIdStr":"","varProductIdStr":""}','pageIndex':1,'pageRows':'10'};

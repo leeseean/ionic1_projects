@@ -1,0 +1,12 @@
+<ion-view view-title='{{titleName}}'>
+    <ion-header-bar class="whiteTab bar-subheader bar tabs" style="padding:0px;border-bottom: 1px solid #dfdfdf;;">
+        <div class="tab-item {{viewForm?'active border-bottom-red':''}}" ng-click="toggleView(true)" style="border-right: 1px solid #dfdfdf;">查看表单</div>
+        <div class="tab-item {{viewForm?'':'active border-bottom-blue'}}" ng-click="toggleView(false)">审批进度</div>
+    </ion-header-bar>
+    <ion-content>
+        <div ng-include="templateUrl"></div>
+    </ion-content>
+    <div class="bar {{signButtonFlag?'':'hide'}}" style="position: fixed;bottom: 0px;left: 0px;">
+        <button ng-click="addRemark()" class="button button-assertive" style="margin: auto">签字意见</button>
+    </div>
+</ion-view>

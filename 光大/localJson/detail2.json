@@ -1,0 +1,17 @@
+{
+  "errCode":"S",
+  "errMsg":"",
+  "data":{
+      "pId":"110",
+      "companyName":"12集团股份有限公司",
+      "deptName":"移动产品事业部",
+      "createBy":"证件包",
+      "manager":"证件宝",
+      "onChargeDept":"负责人1",
+      "tel":"12332111445",
+      "category":"类别2333",
+      "createTime":"2012-11-18 11:12:23",
+      "account":"11020034",
+      "bank":"农民银行"
+  }
+}

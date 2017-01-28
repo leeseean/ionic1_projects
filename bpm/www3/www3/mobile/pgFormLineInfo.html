@@ -1,0 +1,38 @@
+<style>
+    .item-show{
+        border-width:0;
+        line-height: 15px;
+    }
+    .border-line{
+        border-bottom-width: 1px;
+        border-bottom-color: #0067AA;
+    }
+</style>
+<ion-view title="表单行信息" xmlns="http://www.w3.org/1999/html">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content>
+        <div ng-repeat="item1 in itemLineDataName">
+            <div style="margin-top: 20px;font-weight: 600;">
+                <div class="item item-show" style="text-align: center;font-weight: 700;color: #0067AA;">{{itemLineDisPlayName[$index]}}</div>
+                <div class="fl formline-style item item-show" style="margin-left: 5%;">{{item1.displayName[0]}}</div>
+                <div class="fl formline-style item item-show">{{item1.displayName[1]}}</div>
+                <div class="fl formline-style item item-show" style="margin-right: 5%">{{item1.displayName[2]}}</div>
+            </div>
+            <div>
+                <div ng-click="goPgFormDetail($parent.$index,$index)" ng-repeat="item2 in itemLineDataDetail[$index]">
+                    <div class="fl formline-style item item-show border-line" style="margin-left: 5%;">{{item2[item1.fieldName[0]]}}</div>
+                    <div class="fl formline-style item item-show border-line">{{item2[item1.fieldName[1]]}}</div>
+                    <div class="fl formline-style item item-show border-line" style="margin-right: 5%">{{item2[item1.fieldName[2]]}}</div>
+                    <div style="clear: left;zoom:1;"></div>
+                </div>
+            </div>
+            <div style="clear: left;zoom:1;"></div>
+        </div>
+    </ion-content>
+</ion-view>

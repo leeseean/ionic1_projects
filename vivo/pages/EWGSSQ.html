@@ -1,0 +1,426 @@
+<ion-view>
+    <ion-content id="bpm-detail-content" class="stable-bg vivo-detail-content" padding="true" ng-class="getContentBottom()" scroll="false">
+        <div class="list card no-margin">
+            <ion-item>
+                <div class="list-vivo-title">
+                    <span>【{{item.typeName}}】</span>
+                    <span>{{item.Header_formSubTitle}}</span></div>
+                <hr>
+                <div class="list-vivo-control" ng-if="item">
+                    <div class="row">
+                        <div class="col col-70"><span>拟稿人：{{item.Header_CreateUserName}}</span><span>{{item.txt_FDocUnit_text}}</span></div>
+                        <div class="col col-30 text-right">{{item.txt_FDocDate.substr(5,11)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-70"><span>当前处理人：{{item.txt_FCurrentUser}}</span></div>
+                        <div class="col col-30 text-right">{{item.txt_FDocCurrentStatus}}</div>
+                    </div>
+                </div>
+            </ion-item>
+
+        </div>
+        <div class="list card">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="toggleMainText()">
+                <i class="icon button-small " ng-class="isShowMainText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                正文
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowMainText">
+            <div class="list card">
+                <div class="item item-infor">
+                    <span>异常班组:</span>
+                    <div>{{item.sel_FExceptionClass}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>异常类型:</span>
+                    <div>{{item.sel_FExceptionType}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>异常机型:</span>
+                    <div>{{item.txt_FSupportFile}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>供应商代码:</span>
+                    <div>{{item.txt_FSupplierCode}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>具体描述 :</span>
+                    <div>{{item.txt_FDescription}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>投入人数 :</span>
+                    <div>{{item.txt_FPeopleNumber}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>单件耗时 :</span>
+                    <div>{{item.txt_FSingleTime}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>单工位节拍 :</span>
+                    <div>{{item.txt_FBeat}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>异常工时产生时间 :</span>
+                    <div>{{item.txt_FExceptionDate}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>异常责任人 :</span>
+                    <div>{{item.txt_FResponsiblePerson_text}}</div>
+                </div>
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'}">
+                    <span>工程原因分析:</span>
+                    <div>{{item.txt_FProjectReason}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('工程原因分析','txt_FProjectReason')" ng-if="isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'"></button>
+                </div>
+                <!--<div class="item item-infor">
+                    <span>工程原因分析:</span>
+                    <div>{{item.txt_FProjectReason}}</div>
+                </div>-->
+                <!--<div class="item item-infor">
+                    <span>责任部门:</span>
+                    <div>{{item.txt_FReponsibLeDepart_text}}</div>
+                </div>-->
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'}">
+                    <span>责任部门:</span>
+                    <div>{{item.txt_FReponsibLeDepart_text}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateDept()" ng-if="isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'"></button>
+                </div>
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'}">
+                    <span>是否需要签收:</span>
+                    <div>{{item.div_FIsSign}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateRadio('div_FIsSign')" ng-if="isTodo=='0'&&item.txt_FDocCurrentStatus=='审批'"></button>
+                </div>
+                <!--<div class="item item-infor">
+                    <span>是否需要签收:</span>
+                    <div>{{item.div_FIsSign}}</div>
+                </div>-->
+                <div class="item">
+                    <div id="div_FContainer" class="ViceText-div"></div>
+                </div>
+            </div>
+            <div class="list card" ng-if="item.files.length>0">
+                <div class="item title">
+                    <span class="acttach-title-bg">&nbsp;</span><div>附件</div>
+                </div>
+                <div class="item item-attach" ng-repeat="fileLine in item.files">
+                    <span class="attach-span"></span><span class="attach-span1">附件{{cnNumber[$index]}}：</span><a class="attach-span2" ng-click="clickAttach(fileLine)">{{fileLine.FAttachmentName}} (点击下载)</a>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item">
+                        <span>拟制:<span class="audit-user-span">{{item.txt_FAuthor_text}}</span></span>
+                        <div>
+                            {{item.txt_FAuthor_value}}
+                        </div>
+                    </div>
+                    <div class="item">
+                        <span>审核:<span class="audit-user-span">{{item.txt_FApprove_text}}</span></span>
+                        <div>
+                            {{item.txt_FApprove_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_FReaders_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+        <div class="list card">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="toggleMainText2()">
+                <i class="icon button-small " ng-class="isShowMainText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                正文2
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowMainText2">
+            <div class="list card">
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'}">
+                    <span>数量:</span>
+                    <div>{{item.txt_F2Number}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('数量','txt_F2Number')" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'"></button>
+                </div>
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'}">
+                    <span>不良比例:</span>
+                    <div>{{item.txt_F2BadProportion}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('不良比例','txt_F2BadProportion')" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'"></button>
+                </div>
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'}">
+                    <span>本次异常所耗费的工时:</span>
+                    <div>{{item.txt_F2UseTime}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('本次异常所耗费的工时','txt_F2UseTime')" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'"></button>
+                </div>
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'}">
+                    <span>备注:</span>
+                    <div>{{item.txt_F2Remark}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('备注','txt_F2Remark')" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'"></button>
+                </div>
+
+                <div class="item">
+                    <div id="div_F2Container" class="ViceText-div"></div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('正文2文本信息','div_F2Container',true)" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'"></button>
+                </div>
+            </div>
+
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item">
+                        <span>拟制:<span class="audit-user-span">{{item.txt_F2Author_text}}</span></span>
+                        <div>
+                            {{item.txt_F2Author_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_F2Manager'">
+                        <span>审核:<span class="audit-user-span">{{item.txt_F2Manager_text}}</span>
+                            <a class="button button-icon icon ion-ios-minus-outline positive button-small" ng-if="item.txt_F2Manager_text!=''" ng-click="clickRemoveApprovaler()"></a>
+                            <a class="button button-icon icon ion-ios-plus-outline positive button-small" ng-click="clickAddApprovaler()"></a>
+                        </span>
+                        <div>
+                            {{item.txt_F2Manager_value}}
+                        </div>
+                    </div>
+                    <div class="item" ng-if="isTodo!='0'|| controlApproval.controlID!= 'txt_F2Manager'">
+                        <span>审核:<span class="audit-user-span">{{item.txt_F2Manager_text}}</span></span>
+                        <div>
+                            {{item.txt_F2Manager_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_F2Readers_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+        <div class="list card" ng-show="item.div_FIsSign=='是'">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="togglSignText()">
+                <i class="icon button-small " ng-class="isShowSignText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                签收信息
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowSignText&&item.div_FIsSign=='是'">
+            <div class="list card">
+                <div class="item">
+                    <div id="div_SContainer" class="ViceText-div"></div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('签收信息','div_SContainer',true)" ng-if="isTodo=='0'&& item.txt_FDocCurrentStatus== '签收'"></button>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item long-title" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_SSignAuthor'">
+                        <span>签收拟制:<span class="audit-user-span">{{item.txt_SSignAuthor_text}}</span>
+                            <a class="button button-icon icon ion-ios-minus-outline positive button-small" ng-if="item.txt_SSignAuthor_text!=''" ng-click="clickRemoveApprovaler()"></a>
+                            <a class="button button-icon icon ion-ios-plus-outline positive button-small" ng-click="clickAddApprovaler()"></a>
+                        </span>
+                        <div>
+                            {{item.txt_SSignAuthor_value}}
+                        </div>
+                    </div>
+                    <div class="item" ng-if="isTodo!='0'|| controlApproval.controlID!= 'txt_SSignAuthor'">
+                        <span>签收拟制:<span class="audit-user-span">{{item.txt_SSignAuthor_text}}</span></span>
+                        <div>
+                            {{item.txt_SSignAuthor_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_SReaders_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+        <div class="list card" ng-show="item.div_FIsSign=='是'">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="toggleReplyText()">
+                <i class="icon button-small " ng-class="isShowReplyText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                回复信息
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowReplyText&&item.div_FIsSign=='是'">
+            <div class="list card">
+                <div class="item item-infor" ng-class="{'padding-rigth-50':isTodo=='0'&& controlApproval.controlID== 'txt_RCheck'}">
+                    <span>是否需要扣款:</span>
+                    <div>{{item.div_RIsDeduct}}</div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateRadio('div_RIsDeduct')" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_RCheck'"></button>
+                </div>
+                <div class="item">
+                    <div id="div_RContainer" class="ViceText-div"></div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('回复信息','div_RContainer',true)" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_RCheck'"></button>
+                </div>
+            </div>
+
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item long-title" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_RFiction'">
+                        <span>回复拟制:<span class="audit-user-span">{{item.txt_RFiction_text}}</span>
+                            <a class="button button-icon icon ion-ios-minus-outline positive button-small" ng-if="item.txt_RFiction_text!=''" ng-click="clickRemoveApprovaler()"></a>
+                            <a class="button button-icon icon ion-ios-plus-outline positive button-small" ng-click="clickAddApprovaler()"></a>
+                        </span>
+                        <div>
+                            {{item.txt_RFiction_value}}
+                        </div>
+                    </div>
+                    <div class="item" ng-if="isTodo!='0'|| controlApproval.controlID!= 'txt_RFiction'">
+                        <span>回复拟制:<span class="audit-user-span">{{item.txt_RFiction_text}}</span></span>
+                        <div>
+                            {{item.txt_RFiction_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title" ng-if="isTodo=='0'&& controlApproval.controlID== 'txt_RCheck'">
+                        <span>回复审核:<span class="audit-user-span">{{item.txt_RCheck_text}}</span>
+                            <a class="button button-icon icon ion-ios-minus-outline positive button-small" ng-if="item.txt_RCheck_text!=''" ng-click="clickRemoveApprovaler()"></a>
+                            <a class="button button-icon icon ion-ios-plus-outline positive button-small" ng-click="clickAddApprovaler()"></a>
+                        </span>
+                        <div>
+                            {{item.txt_RCheck_value}}
+                        </div>
+                    </div>
+                    <div class="item" ng-if="isTodo!='0'||controlApproval.controlID!= 'txt_RCheck'">
+                        <span>回复审核:<span class="audit-user-span">{{item.txt_RCheck_text}}</span></span>
+                        <div>
+                            {{item.txt_RCheck_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_RReaders_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+        <div class="list card" ng-show="item.div_FIsSign=='是'">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="togglSignText2()">
+                <i class="icon button-small " ng-class="isShowSignText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                扣款签收
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowSignText2&&item.div_FIsSign=='是'">
+            <div class="list card">
+                <div class="item">
+                    <div id="div_DContainer" class="ViceText-div"></div>
+                    <button class="button button-small button-icon icon ion-compose detail-edit-button calm"
+                            ng-click="updateInfor('扣款签收','div_DContainer',true)" ng-if="isTodo=='0'&& item.txt_FDocCurrentStatus=='扣款签收'"></button>
+                </div>
+            </div>
+
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item">
+                        <span>拟制:<span class="audit-user-span">{{item.txt_DAuthor_text}}</span></span>
+                        <div>
+                            {{item.txt_DAuthor_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_DReaders_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+    </ion-content>
+    <ion-footer-bar align-title="center" class="vivo-bpm-footer" ng-if="isTodo=='0'">
+        <div class="vivo-bpm-footer-input" ng-if="isShowFooterInput">
+            <div class="vivo-bpm-footer-input-bg">
+                <textarea placeholder="请输入审批意见" ng-model="item.optionInput"></textarea>
+            </div>
+        </div>
+        <a class="vivo_footer_btn1" ng-if="item.isShowOptionButton==1" ng-click="toggleFooterInput()"><span></span></a>
+        <a class="vivo_footer_btn2" ng-if="item.isShowAgreeButton==1||item.isShowOptionButton==1" ng-click="clickAgree()"><span></span></a>
+        <a class="vivo_footer_btn3" ng-if="item.isShowDisagreeButton==1||item.isShowOptionButton==1" ng-click="clickdisagree()"><span></span></a>
+        <a class="vivo_footer_btn5" ng-if="item.isShowSubmitButton==1" ng-click="clickSubmit()"><span></span></a>
+        <a class="vivo_footer_btn4" ng-click="clickToDispatch()"><span></span></a>
+    </ion-footer-bar>
+    <div class="btn-scroll-top" ng-click="scrollTop()" id="btn-scroll-top">
+        <button class="button button-icon icon ion-arrow-up-a positive"></button>
+    </div>
+    <div class="btn-scroll-bottom" ng-click="scrollBottom()"  id="btn-scroll-bottom">
+        <button class="button button-icon icon ion-arrow-down-a positive"></button>
+    </div>
+    <div class="sie-listPicker-input-div" ng-if="isTodo=='0'&& item.txt_FDocCurrentStatus=='审批'" ng-show="isShowSelect">
+        <div class="bar bar-header sie-select-header">
+            <div class="item item-input vivo-query-input-div">
+                <div class="light item-input-wrapper">
+                    <i class="icon ion-ios-search placeholder-icon"></i>
+                    <input id="queryInput" type="text" placeholder="搜索" ng-model="searchdata.inputval">
+                    <a class="button button-icon ion-close-circled" ng-show="searchdata.inputval!=''" ng-click="clearSelectInput()"></a>
+                </div>
+                <button class="button button-clear button-positive btn-search" ng-click="doSearch()">{{searchdata.inputval==''?'取消':'搜索'}}</button>
+        </div>
+        </div>
+        <ion-content scroll="false" class="has-header stable-bg query-content"
+                     ng-class="{'has-footer':searchdata.selectedDatas.length>0}"
+                    id="query_content">
+                <div class="list" id="selectList">
+                    <a class="item item-avatar item-accordion item-icon-right" ng-repeat="data in searchdata.retData" ng-click="selectItem(data)">
+                        <img ng-src="{{searchdata.imgSrc}}">
+                        <span>{{data.FChinaName}}</span>
+                        <i class="icon " ng-class="data.selected?'ion-ios-checkmark':'ion-ios-circle-outline'"></i>
+                    </a>
+                    <a class="item no-more" ng-if="searchdata.isLoad==false&&searchdata.isLoading==false">
+                        没有更多数据
+                    </a>
+                </div>
+            <div class="select-spinner" id="spinnerDiv2">
+                <ion-spinner icon="ios"></ion-spinner>
+            </div>
+            <!--<ion-infinite-scroll
+                    on-infinite="queryMore()"
+                    distance="1%"
+                    spinner="ios"
+                    ng-if="searchdata.isLoad">
+            </ion-infinite-scroll>-->
+            <div class="select-spinner" id="spinnerDiv">
+                <ion-spinner icon="ios"></ion-spinner>
+            </div>
+
+        </ion-content>
+        <div class="bar bar-footer sie-select-footer" ng-if="searchdata.selectedDatas.length>0">
+            <div class="row">
+                <div class="col col-75">
+                    <div class="list" style="width: {{searchdata.selectedDatas.length*60+'px'}}">
+                        <a class="item" ng-repeat="data in searchdata.selectedDatas" ng-click="deleteItem($index)">
+                            <img ng-src="{{searchdata.imgSrc}}">
+                            <p>{{data.FChinaName}}</p>
+                            <i class="icon ion-close-circled"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col col-25"  ng-click="selectSubmit()">
+                        <h2>确定</h2>
+                        <span>({{searchdata.selectedDatas.length}})</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-view>

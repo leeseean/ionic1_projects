@@ -1,0 +1,102 @@
+<ion-view view-title="工时管理">  
+  <ion-nav-bar class="bar bar-dark">
+  	<ion-nav-buttons side="left">
+        <button class="button button-clear" ng-click="$state.go('home')">
+          <i class="icon ion-ios-arrow-back"></i>
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+        <button class="button button-clear" ng-click="showPop($event)">
+          <i class="icon ion-ios-plus-empty"></i>      
+        </button>
+      </ion-nav-buttons>
+  </ion-nav-bar>
+	<ion-content class="bg-gray">
+    <div class="row bg-white height4 mt5" style="line-height: 2.7em">
+      <div class="col col-20 fz16 text-left colorLight">
+      <!-- {{schedulesTable['date'].year}} -->上周
+      </div>
+      <div class="col col-60 fz16 text-center colorBlue fw600">
+      {{schedulesTable['date'].curMonth}}&nbsp;&nbsp;{{schedulesTable['date'].year}}
+      </div>
+      <div class="col col-20 fz16 text-right colorLight">
+      <!-- {{schedulesTable['date'].nextMonth}} -->下周
+      </div>
+    </div>
+    <div class="list list-inset card">
+      <ion-item class="row text-center pt0 bg-blue white fz12">
+        <div class="col borderRight col-20" style="line-height: 3">日期/星期</div>
+        <div class="col borderRight col-15">上午开<br>始时间</div>
+        <div class="col borderRight col-15">上午结<br>束时间</div>
+        <div class="col borderRight col-15">下午开<br>始时间</div>
+        <div class="col borderRight col-15">下午结<br>束时间</div>
+        <div class="col col-10 borderRight" style="line-height: 3">数量</div>
+        <div class="col col-10">工资<br>代码</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12" ng-repeat="detail in schedulesTable['details']">
+        <div class="col borderRight col-20">{{detail.date}}</div>
+        <div class="col borderRight col-15">{{detail.amStart}}</div>
+        <div class="col borderRight col-15">{{detail.amEnd}}</div>
+        <div class="col borderRight col-15">{{detail.pmStart}}</div>
+        <div class="col borderRight col-15">{{detail.pmEnd}}</div>
+        <div class="col col-10 borderRight">{{detail.amount}}</div>
+        <div class="col col-10">{{detail.remark}}</div>
+      </ion-item>
+      <!-- <ion-item class="row text-center color93 color93 fz12">
+        <div class="col borderRight col-20">03/五</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：30</div>
+        <div class="col col-10 borderRight">8</div>
+        <div class="col col-10">出差</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">04/六</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：30</div>
+        <div class="col col-10 borderRight">8</div>
+        <div class="col col-10">出差</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">05/日</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：30</div>
+        <div class="col col-10 borderRight">8</div>
+        <div class="col col-10">出差</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">06/一</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：30</div>
+        <div class="col col-10 borderRight">8</div>
+        <div class="col col-10">出差</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12 pb0">
+        <div class="col borderRight col-20">07/二</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：30</div>
+        <div class="col col-10 borderRight">8</div>
+        <div class="col col-10">出差</div>
+      </ion-item> -->
+    </div>
+	</ion-content>
+	<script id="page15-pop.html" type="text/ng-template">  
+      <ion-popover-view>  
+        <ion-content>  
+          <ion-list>
+            <ion-item ng-click="selectPop1()">工时填报</ion-item>
+            <ion-item ng-click="selectPop2()">批量填报</ion-item>
+          </ion-list>  
+        </ion-content>  
+      </ion-popover-view>  
+</script>   
+</ion-view>

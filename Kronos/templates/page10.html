@@ -1,0 +1,32 @@
+<ion-view view-title="我的假期">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('home')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content class="bg-gray">
+    <div class="row fz14 mt20 mb10" ng-repeat="holiday in holidays">
+      <div class="col bg-white padding-left padding-right pb15 pt15 colorBlack">
+      本年度休假天数&nbsp;&nbsp;&nbsp;&nbsp;<span>{{holiday.total}}</span>
+      </div>
+      <div class="col bg-white padding-left padding-right pb15 pt15 text-right colorOrange">
+      剩&nbsp;&nbsp;<span>{{holiday.surplus}}</span>
+      </div>
+    </div>
+    <!-- <div class="row fz14 mt20 mb10">
+      <div class="col bg-white padding-left padding-right pb15 pt15 colorBlack">
+      公司奖励假天数&nbsp;&nbsp;&nbsp;&nbsp;5
+      </div>
+      <div class="col bg-white padding-left padding-right pb15 pt15 text-right colorOrange">
+      剩&nbsp;&nbsp;5
+      </div>
+    </div> -->
+    <div class="padding-left padding-right mt4em">
+    <button class="button button-block button-positive" ng-click="$state.go('page6')">
+    我要休假
+    </button>
+    </div>
+	</ion-content>
+</ion-view>

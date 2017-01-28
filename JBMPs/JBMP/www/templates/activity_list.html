@@ -1,0 +1,23 @@
+<ion-view>
+
+    <ion-content>
+
+        <ion-refresher pulling-text="下拉刷新" on-refresh="getActivity(true)"></ion-refresher>
+
+        <div class="list">
+            <a class="item" collection-repeat="activity in activities"
+               ng-href="#/activity_detail/{{openId}}/{{activity.ActivityId}}">
+                <img ng-src="{{activity.ActivityContentData}}" style="width: 100%;height: 150px;">
+
+                <div>{{activity.EcpActivityVO[0].ActivityName}}</div>
+            </a>
+        </div>
+
+        <ion-infinite-scroll on-infinite="getActivity(false)" distance="10%"
+                             ng-if="canLoadMore"></ion-infinite-scroll>
+
+        <loading-toast ng-show="showLoading"></loading-toast>
+
+    </ion-content>
+
+</ion-view>

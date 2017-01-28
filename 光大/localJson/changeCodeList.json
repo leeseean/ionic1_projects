@@ -1,0 +1,9 @@
+{
+  "errCode":"S",
+  "errMsg":"",
+  "dataList":[
+    {"name":"CH-Z001","id":"1"},
+    {"name":"CH-Z002","id":"2"},
+    {"name":"CH-Z003","id":"3"},
+    {"name":"CH-Z004","id":"4"}]
+}

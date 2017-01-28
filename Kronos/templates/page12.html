@@ -1,0 +1,112 @@
+<ion-view view-title="请假详情">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('home')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content class="bg-gray">
+    <div class="padding-left padding-right bg-white">
+      <div class="row pl2em pt2em mb2em padding-bottom">
+        <i class="icon ion-person fz24"></i>
+        <span class="fz16 fw600 colorBlack ml1em">{{LulinAlyLeave[0].title}}</span>
+      </div>
+    </div> 
+
+    <div class="padding-left padding-right bg-white">
+      <div class="row padding-left mb3em padding-bottom">
+        <div class="col pt1em">
+          <span class="fz16 bold colorBlack">请假类型</span>
+          <span class="required">*</span>
+        </div>
+        <div class="col text-right color93 pt1em">
+          <span class="fz16 fw500">{{LulinAlyLeave[0].leaveType}}</span>
+          <i class="icon ion-chevron-right ml1em"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding-left padding-right bg-white">  
+      <div class="row padding-left padding-bottom btmBorder1">
+        <div class="col pt1em">
+          <span class="fz16 bold colorBlack">开始时间</span>
+          <span class="required">*</span>
+        </div>
+        <div class="col text-right color93 pt1em">
+          <span class="fz16 fw500">{{LulinAlyLeave[0].start}}</span>
+          <i class="icon ion-chevron-right ml1em"></i>
+        </div>
+      </div>
+    </div>
+    <div class="padding-left padding-right bg-white">  
+      <div class="row padding-left padding-bottom btmBorder1">
+        <div class="col pt1em">
+          <span class="fz16 bold colorBlack">结束时间</span>
+          <span class="required">*</span>
+        </div>
+        <div class="col text-right color93 pt1em">
+          <span class="fz16 fw500">{{LulinAlyLeave[0].end}}</span>
+          <i class="icon ion-chevron-right ml1em"></i>
+        </div>
+      </div>
+    </div>
+    <div class="padding-left padding-right bg-white">  
+      <div class="row padding-left padding-bottom mb2em">
+        <div class="col pt1em">
+          <span class="fz16 bold colorBlack">请假天数</span>
+          <span class="required">*</span>
+        </div>
+        <div class="col text-right color93 pt1em">
+          <span class="fz16 fw500">{{LulinAlyLeave[0].days}}</span>
+          
+        </div>
+      </div>
+    </div>
+    <div class="padding-left padding-right bg-white">  
+      <div class="row padding-left bg-white fz16 bold" style="padding-top:1em;padding-bottom:1em">
+        {{LulinAlyLeave[0].reason}}
+      </div>
+    </div> 
+	</ion-content>
+  <div class="bg-white fixBtm row">
+    <div class="col text-center mt1em" style="margin-right: -3em;margin-left: -0.5em">
+      <div class="height3 line-height3 width6">
+        <i class="icon ion-ios-compose-outline fz24 colorRed"></i>
+      </div>
+    </div>
+    <div class="col text-center mt1em">
+      <div class="bg-agree height3 line-height3 width6 radius3em">
+        <i class="icon ion-android-done"></i>同意
+      </div>
+    </div>
+    <div class="col text-center mt1em">
+      <div class="bg-forbid height3 line-height3 width6 radius3em">
+        <i class="icon ion-android-close"></i>不同意
+      </div>
+    </div>
+    <div class="col text-center mt1em">
+      <div class="bg-reset height3 line-height3 width6 radius3em">
+        <i class="icon ion-android-refresh"></i>重置
+      </div>
+    </div>
+  </div>
+  <!-- <ion-tabs  class="tabs-stable tabs-icon-left">
+    <ion-tab title="" icon="ion-ios-compose-outline" class="colorRed" style="margin-left: 1em">
+        
+    </ion-tab>
+
+    <ion-tab title="同意" icon="ion-android-done" class="white radius2em bg-agree mr20">
+      
+    </ion-tab>
+
+    <ion-tab title="不同意" icon="ion-android-close" class="white radius2em bg-forbid mr20">
+      
+    </ion-tab>
+
+    <ion-tab title="重置" icon="ion-android-refresh" class="white radius2em bg-reset mr20">
+      
+    </ion-tab>
+  </ion-tabs> -->
+
+</ion-view>

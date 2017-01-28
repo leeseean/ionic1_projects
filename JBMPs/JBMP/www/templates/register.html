@@ -1,0 +1,19 @@
+<ion-view view-title="绑定">
+  <ion-content>
+    <div class="register">
+      <form name="registerForm">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="移动商城用户名" required="true" ng-model="user.username">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="密码" required="true" ng-model="user.password">
+          </label>
+        </div>
+        <div class="list list-inset">
+          <botton class="button button-royal button-full" ng-disabled="registerForm.$invalid" ng-click="signIn(user)">立即绑定</botton>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

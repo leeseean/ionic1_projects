@@ -1,0 +1,126 @@
+<ion-view  title="加班情况" id="detail">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+
+<ion-content class="has-header">
+
+<ul class="list card">
+    
+        <li class="row item">
+            <div class="col col-70"> {{itemLineDataName.fieldName[0]}} </div>
+            <div class="col col-30 text-right"> {{data.USER_NAME}} </div>
+        </li>
+        <li class="row item">    
+            <div class="col col-70"> {{data1.group1.USER_ID.displayName}} </div>
+            <div class="col col-30 text-right"> {{data.USER_ID}} </div>
+        </li>
+        <li class="row item">
+            <div class="col col-70"> {{data1.group1.DEPARTMENT.displayName}} </div>
+        <div class="col col-30 text-right"> {{data.DEPARTMENT}} </div>
+        </li>
+        <li class="row item item-divider">
+            <ion-item class="col col-100 item item-icon-right bpm-detail-blue" ng-click="toggleDetailText()">
+                <i class="icon button-small" ng-class="isShowDetailText ?'ion-ios-arrow-up':'ion-ios-arrow-down'">
+                </i>
+                加班详情
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </li>
+        <div>  
+        <li class="row item">  
+            <div class="col col-70 text-center">时间段</div>
+            <div class="col col-30 text-center">原因</div>
+        </li>   
+        <li class="row item">  
+            <div class="col col-70">{{data.FIELD1}}-{{data.FIELD2}}</div>
+            <div class="col col-30 text-center">{{data.FIELD3}}</div>
+        </li> 
+        <!-- <li class="row item">   
+            <div class="col col-70">2016/2/30 8:33-18:00</div>
+            <div class="col col-30 text-center">赶任务加班</div>
+        </li>    
+        <li class="row item">    
+            <div class="col col-70">2016/2/30 8:33-18:00</div>
+            <div class="col col-30 text-center">赶任务加班</div>
+        </li>
+        <li class="row item">    
+            <div class="col col-70">2016/2/30 8:33-18:00</div>
+            <div class="col col-30 text-center">赶任务加班</div>
+        </li> -->
+        <li class="padding-left">    
+            备注：{{}}
+        </li>
+        </div>
+
+        <li class="row item item-divider">    
+            <div class="col col-70"> {{$scope.mobileMeta.group2.FIELD1.displayName}} </div>
+            <div class="col col-30 text-right"> {{}} </div>
+        </li>        
+</ul>
+
+<!-- <div>
+    <li ng-repeat="item1 in tagName1" class="row item">
+
+    <div class="col col-70"> {{item1.name}} </div>
+    <div class="col col-30 text-right"> {{item1.value}} </div>
+
+    </li>
+</div> -->
+  <!--   <div ng-show="itemLineButton" >
+
+        <div>{{itemLineDisPlayName[0]}}</div>
+
+        <div  ng-repeat="it in itemLineDataDetail[0] track by $index">
+            <div>
+                <div class="item">第{{($index+1)}}条，共{{itemLineDataDetail[parent_index].length}}条
+                </div>
+
+                <div class="item" ng-repeat="item in itemLineDataName[parent_index].displayName track by $index">
+                    {{item}}：{{itemLineDataDetail[0][$parent.$index][itemLineDataName[parent_index].fieldName[$index]]}}
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div id="display1"> 【表单附件】</div>
+    <div id="display2"> <a  ng-repeat="item in fileOut" ng-click="downLoad(item)">{{item.fileName}}</a></div>
+
+
+   <div id="display">
+
+  <div>
+    <button class="button button-balanced" ng-click="clickTask(pgdetail)">
+        表单详细信息
+    </button>
+   </div>
+</div>
+        <button class="ion-ios7-checkmark-outline " ng-click="Submit()">
+            <div>提交</div>
+        </button>
+    </div>
+    <div ng-if="html=='sp'">
+        <div>
+            <button class="ion-ios7-checkmark-outline " ng-click="approval()"><div>审批</div></button>
+        </div>
+        <div>
+            <button class="ion-ios7-close-outline" ng-click="reject()"><div>驳回</div></button>
+        </div>
+        <div>
+            <button class="ion-ios7-reload" ng-click="turnTodo()" ><div>转办</div></button>
+        </div>
+        <div>
+            <button class="ion-ios7-chatboxes-outline " ng-click="communicate()"><div>沟通</div></button>
+        </div>
+    </div>
+</div>
+ -->
+<!--
+<ion-footer-bar style="height: 49;  border-color: #b2b2b2;background-color: #f8f8f8;  padding: 0;">
+
+</ion-footer-bar>-->
+</ion-content>
+</ion-view>

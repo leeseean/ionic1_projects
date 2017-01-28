@@ -1,0 +1,28 @@
+<ion-view>
+    <ion-content>
+        <div class="weui_grids">
+            <a class="weui_grid" collection-repeat="category in middleCategoryData"
+               ng-click="getProductList(category.MiddleCategoryCode)">
+                <div class="weui_grid_icon">
+                    <img src="http://weui.github.io/weui/images/icon_nav_button.png">
+                </div>
+                <p class="weui_grid_label">{{category.MiddleCategoryName}}</p>
+            </a>
+        </div>
+
+        <div class="list padding-top">
+            <a class="item item-thumbnail-left" ng-repeat="product in productList">
+                <img ng-src="{{'http://222.134.52.35:7070/JBEcpExApp/'+product.ShortPicUrl}}">
+
+                <h2>{{product.ProductName}}</h2>
+
+                <p style="color: #ef473a">￥{{product.UnitPrice | number:2}}</p>
+            </a>
+        </div>
+
+        <ion-infinite-scroll on-infinite="loadMore()" distance="10%"
+                             ng-if="canLoadMore"></ion-infinite-scroll>
+
+        <loading-toast ng-show="showLoading"></loading-toast>
+    </ion-content>
+</ion-view>

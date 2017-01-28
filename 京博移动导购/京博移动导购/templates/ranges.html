@@ -1,0 +1,131 @@
+<ion-view view-title="列队管理">
+  <ion-content>
+    <div class="bar item-input-inset bg_search">
+        <label class="item-input-wrapper bg-white">
+        	<i class="icon ion-ios-search placeholder-icon"></i>
+        	<input type="search" placeholder="搜索" >
+        </label>
+    </div>
+    <div class="height4 line-height4" ng-click="add()">
+    	<i class="icon ion-plus inline-block height2 line-height2 width2 text-center border-r1 add-color ml1 mr1-half">
+    	</i>
+    	<span class="fs16">新增</span>
+    </div>
+    <div class="row text-center bg-thead thead-color">
+    	<div class="col">车牌号码</div>
+    	<div class="col">登记流水号</div>
+    	<div class="col">订单编号</div>
+    	<div class="col">客户名称</div>
+    	<div class="col">委托编号</div>
+    	<div class="col">登记时间</div>
+    	<div class="col">描述</div>
+    	<div class="col">操作</div>
+    </div>
+    <div class="row text-center" ng-repeat="range in rangesData track by $index" ng-class="{'bg-even':$odd}">
+        <div class="col height6 line-height6">{{range.t1}}</div>
+        <div class="col height6 line-height6">{{range.t2}}</div>
+        <div class="col height6 line-height6">{{range.t3}}</div>
+        <div class="col fs12 pt1">
+        {{range.t4}}
+        </div>
+        <div class="col height6 line-height6">{{range.t5}}</div>
+        <div class="col time-color pt2">
+        {{range.t6}}
+        </div>
+        <div class="col height6 line-height6">{{range.t7}}</div>
+        <div class="col height6 line-height6" ng-click="cancel($index)">
+          <div class="height3 line-height3 border-r10 btn-cancel inline-block width5 white">
+            {{range.t8}}
+          </div>
+        </div>
+    </div>
+    <!-- <div class="row text-center ">
+    	<div class="col height6 line-height6">鲁BDX009X</div>
+    	<div class="col height6 line-height6">201604210261</div>
+    	<div class="col height6 line-height6">ZY1604210675</div>
+    	<div class="col fs12 pt1">青岛是午汲镇下白石中北石油加油中心
+    	</div>
+    	<div class="col height6 line-height6">WT0000000</div>
+    	<div class="col time-color pt2">
+    	16-04-18<br>17：26：21
+    	</div>
+    	<div class="col height6 line-height6">多委托</div>
+    	<div class="col height6 line-height6">
+    	  <div class="height3 line-height3 border-r10 btn-cancel inline-block width5 white">
+    		取消
+    	  </div>
+    	</div>
+    </div>
+    <div class="row text-center bg-even">
+    	<div class="col height6 line-height6">鲁BDX009X</div>
+    	<div class="col height6 line-height6">201604210261</div>
+    	<div class="col height6 line-height6">ZY1604210675</div>
+    	<div class="col fs12 pt1">
+    	青岛是午汲镇下白石中北石油加油中心
+    	</div>
+    	<div class="col height6 line-height6">WT0000000</div>
+    	<div class="col time-color pt2">
+    	16-04-18<br>17：26：21
+    	</div>
+    	<div class="col height6 line-height6">多委托</div>
+    	<div class="col height6 line-height6">
+    	  <div class="height3 line-height3 border-r10 btn-cancel inline-block width5 white">
+    		取消
+    	  </div>
+    	</div>
+    </div>
+    <div class="row text-center border-btm">
+    	<div class="col height6 line-height6">鲁BDX009X</div>
+    	<div class="col height6 line-height6">201604210261</div>
+    	<div class="col height6 line-height6">ZY1604210675</div>
+    	<div class="col fs12 pt1">
+    	青岛是午汲镇下白石中北石油加油中心
+    	</div>
+    	<div class="col height6 line-height6">WT0000000</div>
+    	<div class="col time-color pt2">
+    	16-04-18<br>17：26：21
+    	</div>
+    	<div class="col height6 line-height6">多委托</div>
+    	<div class="col height6 line-height6">
+    	  <div class="height3 line-height3 border-r10 btn-cancel inline-block width5 white">
+    		取消
+    	  </div>
+    	</div>
+    </div> -->
+    <div class="height4 line-height4" ng-click="add1()">
+    	<i class="icon ion-plus inline-block height2 line-height2 width2 text-center border-r1 add-color ml1 mr1-half">
+    	</i>
+    	<span class="fs16">新增</span>
+    </div>
+    <div class="row text-center bg-thead thead-color">
+    	<div class="col">产品名称</div>
+    	<div class="col">单位</div>
+    	<div class="col">装车数量</div>
+    	<div class="col">描述</div>
+    	<div class="col"></div>
+    	<div class="col"></div>
+    	<div class="col"></div>
+    	<div class="col">操作</div>
+    </div>
+    <div class="row text-center border-btm" ng-repeat="range1 in rangesData1" ng-class="{'bg-even':$odd}">
+    	<div class="col height4 line-height4">
+    	{{range1.r1}}
+    	</div>
+    	<div class="col height4 line-height4">{{range1.r2}}</div>
+    	<div class="col height4 line-height4">{{range1.r3}}</div>
+    	<div class="col height4 line-height4">
+    	{{range1.r4}}
+    	</div>
+    	<div class="col height4 line-height4">{{range1.r5}}</div>
+    	<div class="col time-color pt2">
+    	{{range1.r6}}
+    	</div>
+    	<div class="col height4 line-height4">{{range1.r7}}</div>
+    	<div class="col height4 line-height4" ng-click="del()">
+    	  <div class="height3 line-height3 border-r10 btn-cancel inline-block width5 white">
+    		{{range1.r8}}
+    	  </div>
+    	</div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,12 @@
+<ion-view view-title="设计变更">
+<ion-content style="background: #e5e5e5" ng-controller="planChangeEditCtrl">
+    <div class="titleBlock row">
+        <div class="col-33 {{item.active?'active':''}}" ng-repeat="item in tabs" ng-click="changeTab($index)">{{item.name}}</div>
+
+    </div>
+    <div ng-include="template">
+
+    </div>
+    <button class="button button-positive" ng-click="submit()"  style="margin-top: 10px;margin-left: 40%;width: 20%">提交</button>
+</ion-content>
+</ion-view>

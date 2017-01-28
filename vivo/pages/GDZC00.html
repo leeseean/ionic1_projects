@@ -1,0 +1,178 @@
+<ion-view>
+    <ion-content id="bpm-detail-content" class="stable-bg vivo-detail-content" padding="true" ng-class="getContentBottom()" scroll="false">
+        <div class="list card no-margin">
+            <ion-item>
+                <div class="list-vivo-title">
+                    <span>【{{item.typeName}}】</span>
+                    <span>{{item.Header_formSubTitle}}</span></div>
+                <hr>
+                <div class="list-vivo-control" ng-if="item">
+                    <div class="row">
+                        <div class="col col-70"><span>拟稿人：{{item.Header_CreateUserName}}</span><span>{{item.txt_FDocUnit_text}}</span></div>
+                        <div class="col col-30 text-right">{{item.txt_FDocDate.substr(5,11)}}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-70"><span>当前处理人：{{item.txt_FCurrentUser}}</span></div>
+                        <div class="col col-30 text-right">{{item.txt_FDocCurrentStatus}}</div>
+                    </div>
+                </div>
+            </ion-item>
+        </div>
+        <div class="list card">
+            <ion-item class="item item-icon-right bpm-detail-blue"
+                      ng-click="toggleMainText()">
+                <i class="icon button-small " ng-class="isShowMainText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                正文
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowMainText">
+            <div class="list card">
+                <div class="item title">
+                    <span class="assertive-bg">&nbsp;</span><div>基本信息</div>
+                </div>
+                <div class="item item-infor">
+                    <span>公司类别:</span>
+                    <div>{{item.sel_companyType}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>类别:</span>
+                    <div>{{item.sel_category}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>处理方式:</span>
+                    <div>{{item.sel_dealType}}</div>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item">
+                    <div id="hidVontainer01" class="ViceText-div"></div>
+                </div>
+            </div>
+            <div class="list card">
+                <div class="item item-infor">
+                    <span>资产原值总额:</span>
+                    <div>{{item.txt_FAssetsAmount}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>账面净值总额:</span>
+                    <div>{{item.txt_FNetBookAmount}}</div>
+                </div>
+                <div class="item item-infor">
+                    <span>外卖价值总额:</span>
+                    <div>{{item.txt_FTakeawayAmount}}</div>
+                </div>
+            </div>
+            <div class="list card" ng-if="item.files.length>0">
+                <div class="item title">
+                    <span class="acttach-title-bg">&nbsp;</span><div>附件</div>
+                </div>
+                <div class="item item-attach" ng-repeat="fileLine in item.files">
+                    <span class="attach-span"></span><span class="attach-span1">附件{{cnNumber[$index]}}：</span><a class="attach-span2" ng-click="clickAttach(fileLine)">{{fileLine.FAttachmentName}} (点击下载)</a>
+                </div>
+            </div>
+
+            <div class="list card">
+                <div class="item title">
+                    <span class="positive-bg">&nbsp;</span><div>审批流程</div>
+                </div>
+                <ion-list class="vivo-audit-infor">
+                    <div class="item long-title">
+                        <span>拟稿:<span class="audit-user-span">{{item.txt_FAuthor_text}}</span></span>
+                        <div>
+                            {{item.txt_FAuthor_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>审计签收:<span class="audit-user-span">{{item.txt_FAuditSign_text}}</span></span>
+                        <div>
+                            {{item.txt_FAuditSign_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>部门审核:<span class="audit-user-span">{{item.txt_FDeptAudit_text}}</span></span>
+                        <div>
+                            {{item.txt_FDeptAudit_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>技术鉴定:<span class="audit-user-span">{{item.txt_FTechnicalEvaluation_text}}</span></span>
+                        <div>
+                            {{item.txt_FTechnicalEvaluation_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>外卖报价:<span class="audit-user-span">{{item.txt_TakeawayPrice_text}}</span></span>
+                        <div>
+                            {{item.txt_TakeawayPrice_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>价格审核:<span class="audit-user-span">{{item.txt_FPriceReview_text}}</span></span>
+                        <div>
+                            {{item.txt_FPriceReview_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>审计审核:<span class="audit-user-span">{{item.txt_FAudit_text}}</span></span>
+                        <div>
+                            {{item.txt_FAudit_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>领域审批:<span class="audit-user-span">{{item.txt_FieldManager_text}}</span></span>
+                        <div>
+                            {{item.txt_FieldManager_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>总经理批准:<span class="audit-user-span">{{item.txt_FGeneralManagerAudit_text}}</span></span>
+                        <div>
+                            {{item.txt_FGeneralManagerAudit_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>财务签收:<span class="audit-user-span">{{item.txt_FFinancialReceipt_text}}</span></span>
+                        <div>
+                            {{item.txt_FFinancialReceipt_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>收款确认:<span class="audit-user-span">{{item.txt_FCollectionConfirmation_text}}</span></span>
+                        <div>
+                            {{item.txt_FCollectionConfirmation_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>财务销账:<span class="audit-user-span">{{item.txt_FFinancialAccount_text}}</span></span>
+                        <div>
+                            {{item.txt_FFinancialAccount_value}}
+                        </div>
+                    </div>
+                    <div class="item long-title">
+                        <span>读者:<span class="audit-user-span">{{item.txt_FReaders_text}}</span></span>
+                    </div>
+                </ion-list>
+            </div>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar align-title="center" class="vivo-bpm-footer" ng-if="isTodo=='0'">
+        <div class="vivo-bpm-footer-input" ng-if="isShowFooterInput">
+            <div class="vivo-bpm-footer-input-bg">
+                <textarea placeholder="请输入审批意见" ng-model="item.optionInput"></textarea>
+            </div>
+        </div>
+        <a class="vivo_footer_btn1" ng-if="item.isShowOptionButton==1" ng-click="toggleFooterInput()"><span></span></a>
+        <a class="vivo_footer_btn2" ng-if="item.isShowAgreeButton==1||item.isShowOptionButton==1" ng-click="clickAgree()"><span></span></a>
+        <a class="vivo_footer_btn3" ng-if="item.isShowDisagreeButton==1||item.isShowOptionButton==1" ng-click="clickdisagree()"><span></span></a>
+        <a class="vivo_footer_btn5" ng-if="item.isShowSubmitButton==1" ng-click="clickSubmit()"><span></span></a>
+        <a class="vivo_footer_btn4" ng-click="clickToDispatch()"><span></span></a>
+    </ion-footer-bar>
+    <div class="btn-scroll-top" ng-click="scrollTop()" id="btn-scroll-top">
+        <button class="button button-icon icon ion-arrow-up-a positive"></button>
+    </div>
+    <div class="btn-scroll-bottom" ng-click="scrollBottom()"  id="btn-scroll-bottom">
+        <button class="button button-icon icon ion-arrow-down-a positive"></button>
+    </div>
+</ion-view>

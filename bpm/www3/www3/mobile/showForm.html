@@ -1,0 +1,127 @@
+<ion-view title="流程启动" >
+<ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        <i class="icon ion-ios-arrow-back" ></i>
+
+    </button>
+</ion-nav-buttons>
+
+<ion-nav-buttons side="right">
+    <button ng-click="addTimeSheet()" class="button button-icon icon-right ion-home"></button>
+</ion-nav-buttons>
+<!--<div class="bar bar-header  bar-royal" >
+    <a href="#/home" class="button button-icon icon ion-ios7-arrow-thin-left"  style="width: 10%"></a>
+    <h1 class="title">发起流程</h1>
+
+    <button class="button icon-right ion-home" style="width: 10%;height: 50%;border: 0;  position: absolute;
+  right: inherit;  width: 30;"></button>
+</div>-->
+
+<!--<div class="tabs tabs-top" style="background-color:   #FF964A;  height: 36;">
+    <a class="tab-item">
+        <i class="text" style="color: #fff; line-height: 2.5;">行政管理</i>
+
+    </a>
+    <a class="tab-item">
+        <i class="text" style="color: #fff;  line-height: 2.5;">财务管理</i>
+
+    </a>
+    <a class="tab-item">
+        <i class="text" style="color: #fff;  line-height: 2.5;">深圳现场管理</i>
+
+    </a>
+</div>-->
+
+
+    <ion-tabs class="tabs-top  tabs-orange" style=" height: 36;">
+        <ion-tab title="行政管理">
+            <div class="bar bar-header">
+                <ion-sie-back></ion-sie-back>
+
+            </div>
+            <ion-content class="has-header stable-bg">
+                <div id="maincontent" width="100%">
+                    <div id="apps" class="icongroup" >
+                        <table  width="100%" style="margin:0 auto; border:1px solid #CCCCCC;">
+                            <tr>
+                                <td style="padding:25 20 2 20; border:1px solid #CCCCCC; ">
+                                    <div class="app_1">
+                                        <div class="rootTwo_1" id="apptodo" style="position: relative">
+                                            <a class="productLink ui-link" href="#" ng-click="showTodo()">
+                                                <img src="../ionic/img/2.png" width="68" height="68" alt="">
+                                            </a>
+
+                                        </div>
+                                        <div class="label productName" style="padding-bottom: 40;" >用车申请表</div>
+                                    </div>
+                                </td>
+                                <td style="padding:25 20 2 20;border:1px solid #CCCCCC;">
+                                    <div class="app_2">
+                                        <div class="rootTwo_2">
+                                            <a class="productLink ui-link" href="#" ng-click="showHis()">
+                                                <img src="../ionic/img/4.png" width="68" height="68" alt="">
+                                                <!--<div class="label productName">已办流程</div>-->
+                                            </a>
+                                        </div>
+                                        <div class="label productName" style="  padding-bottom: 40; ">会议室资源管理</div>
+                                    </div>
+                                </td>
+                                <td style="padding:25 20 2 20;border:1px solid #CCCCCC;">
+                                    <div class="app_3">
+                                        <div class="rootTwo_3">
+                                            <a class="productLink ui-link" href="#" ng-click="showStartup()">
+                                                <img src="../ionic/img/3.png" width="68" height="68" alt="">
+                                                <!--<div class="label productName">发起流程</div>-->
+                                            </a>
+                                        </div>
+                                        <div class="label productName" style="  padding-bottom: 40;">固定会议管理</div>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="padding:25 20 2 20;border:1px solid #CCCCCC;">
+                                    <div class="app_4">
+                                        <div class="rootTwo_4">
+                                            <a class="productLink ui-link" href="#" ng-click="showForm()">
+                                                <img src="../ionic/img/1.png" width="68" height="68" alt="">
+                                                <!--<div class="label productName">流程启动</div>-->
+                                            </a>
+                                        </div>
+                                        <div class="label productName" style="  padding-bottom: 40;">会议室预定申请</div>
+                                    </div>
+                                </td>
+
+
+                            </tr>
+
+                        </table>
+
+                    </div>
+                </div>
+            </ion-content>
+        </ion-tab>
+        <ion-tab title="财务管理">
+            <div class="bar bar-header">
+                <ion-sie-back></ion-sie-back>
+
+            </div>
+            <ion-content class="has-header stable-bg">
+
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab title="深圳现场管理">
+            <div class="bar bar-header">
+                <ion-sie-back></ion-sie-back>
+
+            </div>
+            <ion-content class="has-header stable-bg">
+
+            </ion-content>
+        </ion-tab>
+
+    </ion-tabs>
+
+</ion-view>

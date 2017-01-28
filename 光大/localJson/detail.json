@@ -1,0 +1,16 @@
+{
+  "errCode":"S",
+  "errMsg":"",
+  "data":{
+      "pId":"110",
+      "projectName":"12集团股份有限公司改造",
+      "dept":"移动产品事业部",
+      "createBy":"证件包",
+      "manager":"证件宝",
+      "onChargeDept":"负责人1",
+      "buildName":"星河大厦",
+      "buildArea":"东城",
+      "createDate":"2012-11-18",
+      "changeCode":"11020034"
+  }
+}

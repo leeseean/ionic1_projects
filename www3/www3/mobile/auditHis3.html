@@ -1,0 +1,102 @@
+<style>
+    .hollow-circle{
+        float: none;
+        margin-left:4.2rem;
+        width:1.25rem;
+        height:1.25rem;
+        border-radius:1rem;
+        border:2px solid #dcdcdc;
+    }
+    .solid-circle{
+        float: none;
+        background-color: #4dacff;
+        margin-left:4.2rem;
+        width:1.25rem;
+        height:1.25rem;
+        border-radius:1rem;
+        border:2px solid #4dacff;
+    }
+    .text-box{
+        margin-top: -3rem;
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        margin-left:0.05rem;
+        width:60%;
+        border-radius:5px;
+        border:2px solid #dcdcdc;
+        background-color: #dcdcdc;
+        font-size: 1.5rem;
+        float: left;
+    }
+    .text-box-last{
+        margin-top: -3rem;
+        padding-left: 1rem;
+        padding-top: 0.5rem;
+        margin-left: 0.05rem;
+        width:60%;
+        border-radius:5px;
+        border:2px solid #4dacff;
+        background-color: #4dacff;
+        font-size: 1.5rem;
+        float: left;
+    }
+    .circle-line{
+        float: left;
+        margin-left:-3.8rem;
+        height: 7.25rem;
+        width: 1px;
+        border:1px solid #dcdcdc;
+    }
+    .circle-line-first{
+        margin-left:4.75rem;
+        height: 4rem;
+        width: 1px;
+        border:1px solid #dcdcdc;
+    }
+    .line-display{
+        display: none;
+    }
+    .triangle {
+        float: left;
+        margin-top: -0.1rem;
+        margin-left: 3.2rem;
+        width:0;
+        height:0;
+        font-size:0;
+        border:solid 8px;
+        border-color:#fff #dcdcdc #fff #fff;
+    }
+    .triangle-last{
+        float: left;
+        margin-top: -0.1rem;
+        margin-left: 3.2rem;
+        width:0;
+        height:0;
+        font-size:0;
+        border:solid 8px;
+        border-color:#fff #4dacff #fff #fff;
+    }
+</style>
+<ion-view  title="流程详细" id="auditHis3">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <div  ng-repeat="item in hisList">
+            <div ng-class="{true: 'circle-line-first', false: 'line-display'}[$index==0]"></div>
+            <div style="float: left;padding-left: 0.6rem;height: 6rem;font-size: 1rem;width: 3.75rem;text-align: center;display:block;word-break: break-all;word-wrap: break-word;">{{item.activityinstname}}</div>
+            <div  ng-class="{true: 'triangle', false: 'triangle-last'}[$index!=(hisList.length-1)]" ></div>
+            <div ng-class="{true: 'hollow-circle', false: 'solid-circle'}[$index!=(hisList.length-1)]"></div>
+            <div class="circle-line" ng-class="{true: '', false: 'line-display'}[$index!=(hisList.length-1)]"></div>
+            <div ng-class="{true: 'text-box', false: 'text-box-last'}[$index!=(hisList.length-1)]" class="">{{item.opiontype}},{{item.opiniontext}}<br>{{item.operatorname}}{{item.createtime}}</div>
+            <div style="clear: left;zoom:1"></div>
+        </div>
+        <!------------------------解决手机上显示button问题----------------------->
+        <div style="text-align: center;padding-top: 10;width: 100%;float:left;visibility:hidden;">
+            <button class="button button-balanced" style="height: 18;width: 95%;" >
+            </button>
+        </div>
+    </ion-content>
+
+</ion-view>

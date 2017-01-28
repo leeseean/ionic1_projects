@@ -1,0 +1,42 @@
+<ion-view>
+    <ion-content>
+
+        <div class="list">
+
+            <div class="card">
+                <div class="item item-divider">资金信息</div>
+                <div style="padding: 5px 16px;white-space: nowrap;">
+                    <span class="text-right" style="width: 35%;">客户余额:</span>
+
+                    <span class="parent-65">￥{{sumInfo.CustAmount| number:2}}</span>
+                </div>
+                <div style="padding: 5px 16px;white-space: nowrap;">
+                    <span class="text-right" style="width: 35%;">可用余额:</span>
+                    <span class="parent-65">￥{{sumInfo.ValidAmount| number:2}}</span>
+                </div>
+                <div style="padding: 5px 16px;white-space: nowrap;">
+                    <span class="text-right" style="width: 35%;">在厂余额:</span>
+
+                    <span class="parent-65">￥{{sumInfo.InfactoryAmount| number:2}}</span>
+                </div>
+                <div style="padding: 5px 16px;white-space: nowrap;">
+                    <span class="text-right" style="width: 35%;">预付款余额:</span>
+
+                    <span class="parent-65">￥{{sumInfo.OnlineEffectable| number:2}}</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="vertical-center-parent">
+                    <div class="item item-divider">充值记录</div>
+                    <a class="vertical-center-child button button-small button-stable"
+                       style="right: 8px;z-index: 2;" ng-href="#/payment_record_list/{{openId}}">更多</a>
+                </div>
+                <div id="chart_container" auto-height="20"></div>
+            </div>
+
+        </div>
+
+        <loading-toast ng-show="showLoading"></loading-toast>
+    </ion-content>
+</ion-view>

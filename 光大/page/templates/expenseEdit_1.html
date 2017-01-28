@@ -1,0 +1,38 @@
+<div class="list inputList">
+    <div class="item" ng-click="popCompanyList()">
+        <div class="label">申请单位</div>
+        <div class="value {{submitData.companyName?'blue':''}}">{{submitData.companyName||'请选择申请单位'}}<i class="icon ion-ios-arrow-right"></i></div>
+    </div>
+    <div class="item"  ng-click="popDeptList()">
+        <div class="label">申请部门</div>
+        <div class="value {{submitData.deptName?'blue':''}}">{{submitData.deptName||'请选择申请部门'}}<i class="icon ion-ios-search"></i></div>
+    </div>
+    <div class="item"  ng-click="popOnChargeDeptList()">
+        <div class="label">申请部门负责人</div>
+        <div class="value {{submitData.onChargeDept?'blue':''}}">{{submitData.onChargeDept||'请选择部门负责人'}}<i class="icon ion-ios-search"></i></div>
+    </div>
+    <div class="item"  ng-click="popManagerList()">
+        <div class="label">申请人/直属上司</div>
+        <div class="value {{submitData.manager?'blue':''}}">{{submitData.manager||'请选择直属上司'}}<i class="icon ion-ios-search"></i></div>
+    </div>
+    <div class="item">
+        <div class="label">联系电话</div>
+        <input class="value {{submitData.tel?'blue':''}}" ng-model="submitData.tel" placeholder="请输入联系电话"/>
+    </div>
+    <div class="item" ng-click="popCategoryList()">
+        <div class="label">类别</div>
+        <div class="value  {{submitData.category?'blue':''}}">{{submitData.category||'请选择类别'}}<i class="icon ion-ios-arrow-right"></i></div>
+    </div>
+    <div class="item" ng-click ="selectTime()">
+        <div class="label">申请时间</div>
+        <div class="value {{submitData.createTime?'blue':''}}">{{submitData.createTime||'请选择申请时间'}}<i class="icon ion-ios-arrow-right"></i></div>
+    </div>
+    <div class="item">
+        <div class="label">账号</div>
+        <input class="value {{submitData.account?'blue':''}}" ng-model="submitData.account" placeholder="请输入账号"/>
+    </div>
+    <div class="item" ng-click="popBankList()">
+        <div class="label">开户银行</div>
+        <div class="value  {{submitData.bank?'blue':''}}">{{submitData.bank||'请选择开户银行'}}<i class="icon ion-ios-arrow-right"></i></div>
+    </div>
+</div>

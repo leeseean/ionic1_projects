@@ -1,0 +1,111 @@
+<!--<style>
+    .card{overflow: visible !important;}
+    .item{overflow: visible !important;}
+</style>-->
+ <style>
+     .bgimg{background:url( "../ionic/images/icon-time.png") no-repeat;background-size:22px;padding-left:24px;}
+ </style>
+<ion-view title="{{title.MENULABEL}}" xmlns="http://www.w3.org/1999/html">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="ion-forward" style="  height: 100%;background-color: rgb(74, 135, 238);border-color: transparent;border-radius: 16%;font-size: medium;" ng-click="formcommit()">
+            提交
+        </button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="list group-margin card" ng-repeat="group in group track by $index" >
+            <div class="item" ng-repeat="item in groupDisplay[$index]">{{item.DISPLAY_NAME}}:
+                <span ng-if="toggle1(item.LABLE_TYPE,item.REFDATASOURCE)" >{{item.Value}}</span>
+                <span ng-if="toggle2(item.LABLE_TYPE,item.REFDATASOURCE)" ><input ng-model="item.Value" style="border: none"></span>
+                <span ng-if="toggle3(item.LABLE_TYPE,item.REFDATASOURCE)" >
+                    <span class="button-icon bgimg" ng-click="selectDate(item.DISPLAY_NAME)" ng-model="item.Value">{{item.Value}}</span>
+                     <div ng-model="mytime" class="well well-small" style="display:none;">
+                         <datepicker show-weeks="false" starting-day="1" style="zoom:1;"></datepicker>
+                     </div>
+                </span>
+
+                <span ng-if="toggle4(item.DEFAULT_VALUE,item.LABLE_TYPE,item.REFDATASOURCE)" >{{item.Value}}</span>
+                <span ng-if="toggle5(item.LABLE_TYPE,item.ID)">
+                    <input ng-click="fromline(item.FIELD_NAME)" style="color:#145fd7;width: auto;height: 30px;border: none;" value="点击进入新增" />
+                </span>
+                <span ng-if="toggle6(item.LABLE_TYPE)">
+                    <select style="border: none;width: 80%;" ng-model="item.Value">
+                        <option  ng-repeat="option in item.Selectlist" >{{option.VALUENAME}}</option>
+                    </select>
+                </span>
+                <span ng-if="toggle7(item.LABLE_TYPE,item.REFDATASOURCE)" >
+                    <input ng-click="selectone(item.SOURCE_LIST_ID,item.ID)" style="width: 90%;height: 30px;border: none;" value="{{item.Value}}">
+                </span>
+                <span ng-if="toggle8(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle9(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle10(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle11(item.LABLE_TYPE)" ><textarea ng-model="item.Value"></textarea></span>
+                <span ng-if="toggle12(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle13(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle16(item.LABLE_TYPE)">
+                    <input ng-click="selectmore(item.SOURCE_LIST_ID,item.ID,item.FIELD_NAME)" style="width: 90%;height: 30px;border: none;" value="{{item.Value}}">
+                </span>
+                <span ng-if="toggle15(item.LABLE_TYPE)" class="item-toggle">
+                <label class="toggle toggle-balanced sie-toggle">
+                    <input type="checkbox" ng-model="item.Value">
+                    <div class="track">
+                        <span class="toggle-span-on"  >ON</span>
+                        <span class="toggle-span-off" >OFF</span>
+                        <div class="handle"></div>
+                    </div>
+                </label></span>
+                <span ng-if="toggle17(item.LABLE_TYPE,item.REFDATASOURCE)" >
+                    <span class="button-icon bgimg" ng-click="selectTime(item.DISPLAY_NAME)" ng-model="item.Value">{{item.Value}}</span>
+                     <div ng-model="mytime" class="well well-small" style="display:none;">
+                         <timepicker hour-step="1" minute-step="1" show-meridian="true" meridians=["上午","下午"] style="margin-left: auto;margin-right: auto;"></timepicker>
+                     </div>
+                </span>
+
+            </div>
+        </div>
+     <!--   <div class="fl formline-style" style="margin-left: 5%;">{{data[0].FIELD_DESC}}</div>
+        <div class="fl formline-style">{{data[1].FIELD_DESC}}</div>
+        <div class="fl formline-style" style="margin-right: 5%">{{data[2].FIELD_DESC}}</div>
+        <div ng-repeat="item in inputdata" ng-click="reInput()">
+            <div class="fl formline-style" style="margin-left: 5%;">{{item[0].VALUE}}</div>
+            <div class="fl formline-style">{{item[1].VALUE}}</div>
+            <div class="fl formline-style" style="margin-right: 5%">{{item[2].VALUE}}</div>
+        </div>-->
+        <!--<div style="width: 100%;height:49;text-align: center">
+            <button class="button button-positive button-outline" style="width:40%;border-radius: 5px;color: #FFFFFF;  border-color: rgb(253, 162, 81);background-color: rgb(251, 127, 16);" ng-click="formcommit()">
+                提交
+            </button>
+        </div>-->
+
+    </ion-content>
+    <!--<div class="sie-listPicker-div-bg" ng-click="hideSelect()" ng-if="isShow"></div>
+    <div class="sie-listPicker-div" ng-class="getClass()">
+        <div class="sie-listPicker-bar stable-bg">
+            <button class="left button button-light" ng-click="hideSelect()">取消</button>
+            <button class="right button button-positive" ng-click="select(1)">确定</button>
+        </div>
+
+        <div style="width: 100%;height: 250px;position: relative;display: block;" class="light-bg">
+            <ion-scroll delegate-handle="itemScroll" scrollbar-y="false" style="width: 100%;height: 250px;z-index: 13;float:left" on-scroll="setSelected(event)" ng-show="showType==1">
+                <div class="list" style="width: 100%;height: 100%">
+                    <ion-item></ion-item>
+                    <ion-item></ion-item>
+                    <ion-item name="listPicker-item" class="text-center" ng-repeat="item in selectlist" ng-class="{selected:$index==0}">{{item.VALUENAME}}</ion-item>
+                    <ion-item></ion-item>
+                    <ion-item></ion-item>
+                </div>
+            </ion-scroll>
+            <div class="selectItem"></div>
+        </div>
+    </div>-->
+<!--    <ion-footer-bar style="height: 52;">
+        <div style="width: 100%;text-align: center">
+            <button class="button button-positive button-outline" style="width:40%;border-radius: 5px;color: #FFFFFF;  border-color: rgb(253, 162, 81);background-color: rgb(251, 127, 16);" ng-click="formcommit()">
+                提交
+            </button>
+        </div>
+    </ion-footer-bar>-->
+</ion-view>

@@ -1,0 +1,36 @@
+<div class="list inputList2">
+    <div class="item">
+        <div class="label">合同编号</div>
+        <input class="valueWidthBorder" ng-model="submitData.contractNo"/>
+    </div>
+    <div class="item">
+        <div class="label">关联合同</div>
+        <input class="valueWidthBorder" ng-model="submitData.contractRe"/>
+    </div>
+    <div class="item">
+        <div class="label">施工方</div>
+        <input class="valueWidthBorder" ng-model="submitData.constructor"/>
+    </div>
+    <div class="item">
+        <div class="label">甲方预估</div>
+        <input class="valueWidthBorder" ng-model="submitData.cal"/>
+    </div>
+    <div class="item">
+        <div class="label">变更内容</div>
+        <textarea class="valueWidthBorder" ng-model="submitData.changeContent" style="height: 100px"></textarea>
+    </div>
+    <div class="item row">
+        <div class="col-50">
+            <button style="margin-right: 10px;float: right;" class="button button-stable button-positive">
+                <i class="icon ion-ios-plus-outline"></i>
+                <span>添加</span>
+            </button>
+        </div>
+        <div class="col-50">
+            <button style="margin-left: 10px" class="button button-stable   button-assertive">
+                <i class="icon ion-ios-trash-outline"></i>
+                <span>删除</span>
+            </button>
+        </div>
+    </div>
+</div>

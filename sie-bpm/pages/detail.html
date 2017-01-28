@@ -1,0 +1,73 @@
+<ion-view>
+    <ion-content id="bpm-detail-content" class="stable-bg vivo-detail-content" padding="true" ng-class="getContentBottom()" scroll="false">
+        <div class="list card no-margin">
+            <ion-item>
+                <div class="list-vivo-title text-center">
+                    <span>【流程类型】</span>
+                    <span>  流程标题  </span>
+                </div>
+                <hr>
+            </ion-item>
+            <div class="list-vivo-control" ng-if="tagName1group1">
+                    <div class="row item" ng-repeat="item1group1 in tagName1group1">
+                        <div class="col col-70"><span>{{item1group1.name}}</span></div>
+                        <div class="col col-30 text-right">{{item1group1.value}}</div>
+                    </div>
+                </div>
+        </div>
+        <div class="list card">
+            <ion-item class="item item-icon-right bpm-detail-blue" ng-click="toggleMainText()">
+                <i class="icon button-small " ng-class="isShowMainText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                正文
+            </ion-item>
+            <div class="bpm-detail-blue-bg vivo-maintext-div"></div>
+        </div>
+        <div class="list srm-Authentication-maintext" ng-show="isShowMainText">
+            <div class="row">
+            <p class="col col-60">由于客户要在下周看成品，因此申请加班超量完成工作以达成目标</p>
+            </div>
+        </div>   
+        <div class="list card">
+            <ion-item class="item item-icon-right bpm-detail-blue" ng-click="toggleDetailText()">
+                <i class="icon button-small " ng-class="isShowDetailText ?'ion-ios-arrow-up':'ion-ios-arrow-down'"></i>
+                表单详细
+            </ion-item>
+            <div class="list card" ng-show="isShowDetailText">
+                    <div class="row item item-infor" ng-repeat="item1 in tagName1" >
+                        <div class="col col-70">{{item1.name}}</div>
+                        <div class="col col-30 text-right">{{item1.value}}</div>
+                    </div>
+            </div>
+        </div>
+
+       <!--  附件下载 -->
+
+            <div class="item">
+                    <div class="row">
+                        <span class="acttach-title-bg">&nbsp;</span>附件
+                    </div>
+                    <div class="row attach-span1">
+                        <span class="attach-span"></span>
+                            附件{{cnNumber[$index]}}：
+                        <a class="attach-span2" ng-click="clickAttach(fileLine)">
+                            {{fileLine.fileName}} (点击下载)
+                        </a>
+                    </div>
+            </div>     
+            <!-- <div class="list card" ng-if="item.files.length>0">
+                <div class="item title">
+                    <span class="acttach-title-bg">&nbsp;</span><div>附件</div>
+                </div>
+                <div class="item item-attach" ng-repeat="fileLine in item.attaches">
+                    <span class="attach-span"></span>
+                    <span class="attach-span1">附件{{cnNumber[$index]}}：</span>
+                    <a class="attach-span2" ng-click="clickAttach(fileLine)">
+                    {{fileLine.fileName}} (点击下载)
+                    </a>
+                </div>
+            </div>      --> 
+    </ion-content>
+</ion-view>
+
+
+//后台数据需补充流程类型和流程标题内容，正文内同，附件下载部分内容。

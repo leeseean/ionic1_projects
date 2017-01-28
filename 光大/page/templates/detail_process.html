@@ -1,0 +1,22 @@
+<div class="processContent">
+    <div class="list">
+        <div class="line"></div>
+        <div class="title-item">
+            <div class="titleCircle">
+                <div class="circle">
+                    <div class="start bg-orange"></div>
+                </div>
+            </div>
+            <!--<div class="line"></div>-->
+            <div class="title">{{data2.title}}</div>
+        </div>
+        <div class="m-item" ng-repeat="item in data2.examineList">
+            <div class="circle {{item.examineTime?'bg-green':'bg-grey'}}">
+                <i class="icon {{item.examineTime?'ion-checkmark-round':'ion-chevron-left'}}"></i>
+            </div>
+            <span class="subTitle {{item.examineTime?'blue':''}}"><span class="r-name">{{item.name}}</span><span class="position">{{item.position}}</span><span class="time">{{item.examineTime}}</span></span>
+            <div class="triangle"></div>
+            <div class="comment">{{item.comments}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<style>
+    .spinner-ios {
+        position: absolute;
+        left: 46%;
+    }
+</style>
+<ion-view  >
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+    <ion-nav-buttons side="right">
+        <a ng-click="ensure()" class="button button-icon icon-right">确定</a>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+        <form class="ui-listview-filter ui-bar-c" role="search">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input id="search" type="search" placeholder="请先输入人员姓名" ng-model="filter" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+            </label>
+        </form>
+                <div class="list">
+
+                    <ion-checkbox ng-repeat="item in tagName |filter:filter" ng-model="item.checked" ng-checked="item.checked"  class="item-checkbox-right"   style="height: 60;border:0">
+
+                        <h2>{{item.realname}}</h2>
+                        <h4>说明：{{item.orgname}}</h4>
+                    </ion-checkbox>
+                    <ion-infinite-scroll on-infinite="loadMore()" ng-if="moreDataCanBeLoaded()" distance="90%">
+                    </ion-infinite-scroll>
+                    <div ng-if="moreDataCanBeLoadedtext()" class="padding list-text"style="  color: rgb(74, 135, 238);">没有更多内容</div>
+
+                </div>
+
+    </ion-content>
+    <ion-footer-bar >
+      <div style="width: 100%;text-align: center">
+        <button class="button button-positive button-outline" ng-click="queryPeople()" style="width: 100" >查找</button>
+      </div>
+    </ion-footer-bar>
+
+</ion-view>

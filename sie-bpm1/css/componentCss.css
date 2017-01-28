@@ -1,0 +1,74 @@
+.backdrop{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.popup{
+    border-radius: 3px !important;
+    background-color: rgba(255, 255, 255, 0.93) !important;
+}
+.popup-head{
+    border-bottom:0;
+}
+.popup-sub-title{
+    font-family: SimHei;
+    font-size: 18px;
+}
+.popup-body{
+    min-height: 40px;
+}
+.popup-body input{
+    font-family: SimHei;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 30px;
+}
+.popup-buttons{
+    height: 48px;
+    min-height: 0px;
+    padding: 0 10px 16px 10px;
+}
+.popup-buttons .button{
+    min-height: 20px;
+    border-radius: 2px;
+    line-height: 20px;
+    font-family: SimHei;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-right: 15px;
+}
+.popup-buttons .button.button-positive{
+    border-color: #00B1FF;
+    background-color: #07C8FB;
+}
+.popup-buttons .button.button-stable{
+    border-color: #D4D4D4;
+    background-color: #D8D7D7;
+}
+.popup-body a{
+    position: absolute;
+    right: 10px;
+    bottom: 60px;
+    color: rgb(189, 189, 189);
+}
+.popup-body textarea{
+    min-height: 100px;
+}
+.sie-disable{
+    cursor: default !important;
+    pointer-events: none;
+}
+.width-90{
+    width: 90%;
+}
+.sie-listPicker-input-div {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    background-color: rgba(244, 244, 244, 1);
+    z-index: 116;
+    display: block;
+    position: absolute;
+    height: 100%;
+}
+.button:hover{
+    color: #11c1f3;
+}

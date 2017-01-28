@@ -1,0 +1,47 @@
+
+<style>
+    a:link {color: rgb(153, 153, 172)}
+   a:visited {color: rgb(153, 153, 172)}
+    .popup-body {
+        text-align: center;
+    }
+</style>
+<ion-view title="移动审批" >
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+    <!--<ion-nav-buttons side="right">
+        <button ng-click="" class="button button-icon icon-right ion-home"></button>
+    </ion-nav-buttons>-->
+
+    <ion-content class="has-header">
+        <p class="padding-top"></p>
+        <div>
+            <img src="../ionic/img/LOGO.png" width="70" height="70" style="  margin-left: 40%;margin-top: 10%; margin-bottom: 10%;">
+        </div>
+
+        <div class="list" style="width: 85%;margin-left: 7.5%;">
+            <label class="item item-input" style="border-top: none; border-left: none;border-right: none;color: rgb(221, 221, 221)">
+                <span class="input-label"><img src="../ionic/img/name.png"></span>
+                <input type="text"  ng-model="userInfo.uname">
+            </label>
+            <label class="item item-input" style=" border-left: none;border-right: none;color: rgb(221, 221, 221)">
+                <span class="input-label"><img src="../ionic/img/password.png"></span>
+                <input type="password"  ng-model="userInfo.pwd">
+            </label>
+            <!--<label>{{userInfo.uname+'   -----'+userInfo.pwd}}</label>-->
+
+        </div>
+        <div class="remember"style="width: 85%;margin-left:7.5%;color: rgb(153, 153, 172)">
+            <input type="checkbox" ng-checked="setting.checked" ng-model="setting.checked">记住密码
+
+            <!--  <a href="#/forgot-password" style="float: right;text-decoration:none;">找回密码</a>-->
+        </div>
+        <p class="padding-top"></p>
+        <div style="text-align: center;padding-top: 10">
+            <button class="button  button-positive" ng-click="signIn(user)" style="height: 18;width: 85%;border-radius: 10px;" >登录</button>
+
+        </div>
+    </ion-content>
+</ion-view>

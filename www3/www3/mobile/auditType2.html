@@ -1,0 +1,24 @@
+<ion-view  title="流程详细" id="auditType2">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+
+<ion-content class="has-header">
+
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">流程名称<div style="float: right;color: #323232;">{{data.processinstname}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">节点名称<div style="float: right;color: #323232;">{{data.activityinstname}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;">流程描述<div style="float: right;color: #323232;">{{data.processinstdesc}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">流程发起人<div style="float: right;color: #323232;">{{data.creatorname}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">流程状态<div style="float: right;color: #323232;">{{gWFStatus.getStatusDesc("businessstate", data.businessstate)}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">节点状态<div style="float: right;color: #323232;">{{gWFStatus.getStatusDesc("itemstate", data.currentstate)}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">启动日期<div style="float: right;color: #323232;">{{data.starttime}}</div></li>
+    <li class="item" style="overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.8rem;">完成日期<div style="float: right;color: #323232;">{{data.endtime}}</div></li>
+
+   <!------------------------解决手机上显示button问题----------------------->
+    <div style="text-align: center;padding-top: 10;width: 100%;float:left;visibility:hidden;">
+        <button class="button button-balanced" style="height: 18;width: 95%;" >
+        </button>
+    </div>
+</ion-content>
+</ion-view>

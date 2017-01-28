@@ -1,0 +1,276 @@
+.todoList .item{
+    padding: 16px 0 16px 60px;
+}
+.todoList .item .circle{
+    position: absolute;
+    top: 28px;
+    left: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    /*background: red;*/
+    text-align: center;
+    line-height: 44px;
+    color: #fff;
+}
+.todoList .item .pType{
+    font-weight: bold;
+}
+.todoList .item .r-block{
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+    border: 1px solid #dfdfdf;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #A0A0A0;
+}
+
+.todoList .item .date{
+    font-size: 12px;
+}
+
+.border-bottom{
+    border-bottom: 1px solid #dfdfdf;
+}
+.bg-orange{
+    background: #faa900;
+}
+.bg-blue{
+    background: #57b4fa;
+}
+.bg-grey{
+    background: #B5B5B5;
+}
+.bg-green{
+    background: #83ce01;
+}
+.bar-subheader.tabs{
+    height: 44px;
+}
+
+/*process*/
+.line{
+    width: 6px;
+    height: 100%;
+    position: absolute;
+    left: 27px;
+    background: #dfdfdf;
+    border: 2px solid #ffffff;
+    z-index: 222;
+}
+.title-item{
+    padding-left: 60px;
+    position: relative;
+    line-height: 60px;
+    border-bottom: 1px solid #dfdfdf;
+}
+.title-item .circle{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 10px;
+    top: 10px;
+    background: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #dfdfdf;
+}
+.title-item .circle .start{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    top: 10px;
+    left: 9px;
+}
+.processContent .m-item{
+    border-color: #ddd;
+    background-color: #fff;
+    color: #444;
+    position: relative;
+    display: block;
+    margin: -1px;
+    padding: 16px 16px 16px 60px;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 16px;
+}
+.processContent .m-item .circle{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 15px;
+    top: 30px;
+
+    border-radius: 15px;
+    border: 2px solid #ffffff;
+    z-index: 333;
+}
+.processContent .m-item .circle .icon{
+    font-size: 16px;
+    margin-left: 6px;
+    /* margin-top: 4px; */
+    vertical-align: middle;
+    color: #fff;
+}
+.titleCircle{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ffffff;
+    width: 60px;
+    height: 50px;
+    z-index: 333;
+}
+.processContent .m-item  .subTitle{
+    /*color:#57b4fa;*/
+    font-size: 12px;
+}
+.processContent .m-item  .subTitle.blue{
+    color:#57b4fa;
+    /*font-size: 12px;*/
+}
+.r-name{
+    font-size: 16px;
+}
+.position{
+    margin-left:10px;
+}
+.processContent .m-item .time{
+    float: right;
+}
+.processContent .m-item .comment{
+    background: #e8f7fe;
+    color: #999;
+    word-break: break-all;
+    white-space: normal;
+    font-size: 12px;
+    /* padding: 5px; */
+    min-width: 50px;
+    line-height: 29px;
+    padding: 0 10px
+}
+.whiteTab {
+    background: #ffffff;
+    border-left: 0;
+    border-right: 0;
+}
+.triangle{
+    width:0;
+    height:0;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-bottom:8px solid #e8f7fe;
+    margin-left: 10px;
+}
+
+/*formInfo*/
+.formInfo .tag{
+    font-size: 12px;
+    padding: 1px 10px;
+    color: #999;
+    background: #e3e3e3;
+}
+.formInfo .list{
+    padding-left: 10px;
+}
+.formInfo .list .item{
+    padding: 10px 10px 10px 0;
+    border-left: 0;
+}
+.formInfo .list .item div {
+    display: inline-block;
+}
+.formInfo .list .item .value{
+    float: right;
+}
+.banYuan{
+    border-radius: 0px 0px 40px 40px;
+    height: 20px;
+    width: 40px;
+    background-color: #f9f8f3;
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    color: #999;
+    margin: auto;
+
+}
+.showButton div{
+    background: #f9f8f3;
+    text-align: center;
+    font-size: 12px;
+    line-height: 25px
+}
+.border-bottom-red{
+    border-bottom: 2px solid red;
+}
+.border-bottom-blue{
+    border-bottom: 2px solid #57b4fa;
+}
+.popover{
+    height: 120px;
+    width: 150px;
+}
+.popover a{
+    text-align: center;
+}
+
+.titleBlock{
+    width: 66%;
+    background: #c9c9c9;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 0;
+    line-height: 25px;
+    text-align: center;
+}
+.titleBlock .col-33{
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: rgb(153, 153, 153);
+}
+.titleBlock .col-33.active{
+    color: red;
+    background: #ffffff;
+}
+.inputList , .inputList2{
+    margin: 0 10px;
+    height: 372px;
+    background: #fff;
+}
+.inputList .item{
+    padding: 10px;
+}
+.inputList .item .label{
+    display: inline-block;
+}
+.inputList .item .value{
+    display: inline-block;
+    float: right;
+}
+.value.blue{
+    color: #57b4fa;
+}
+input.value{
+    border: none;
+    text-align: right;
+}
+.inputList2 .item{
+    border-bottom: 0;
+    padding: 10px;
+    border-top: 0;
+}
+.inputList2 .item .label{
+    display: inline-block;
+    width: 30%;
+}
+.inputList2 .item .valueWidthBorder{
+    display: inline-block;
+    width: 70%;
+    border: 1px solid #dfdfdf;
+    height: 24px;
+    vertical-align: middle;
+}
+a.tab-item-active{
+    color:red;
+}

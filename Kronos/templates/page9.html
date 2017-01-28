@@ -1,0 +1,172 @@
+<ion-view view-title="异常说明">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('page8')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="submit()">
+        提交
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content>
+    <div class="list list-inset">
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+        </span>
+        <input type="text" placeholder="黎明" style="padding-left: 3em"
+        ng-model="abnormals.name" readonly="readonly">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder1">
+        <span class="input-label fz20 bold">
+        工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号
+        </span>
+        <input type="text" placeholder="6602220" style="padding-left: 3em" 
+        ng-model="abnormals.ID" readonly="readonly">
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        补卡日期
+        </span>
+        <input type="text" placeholder="2016年5月3日" style="padding-left: 3em" 
+        ng-model="submitData.createDate" ng-click="selectTime()">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        跨天标记
+        </span>
+        <input type="text" placeholder="是" style="padding-left: 3em" 
+        ng-model="abnormals.sign">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        实际上班
+        </span>
+        <input type="time" placeholder="9：12" style="padding-left: 3em" 
+        ng-model="abnormals.actualUp" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        修正上班
+        </span>
+        <input type="time" placeholder="9：30" style="padding-left: 3em"
+        ng-model="abnormals.correctUp" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        实际下班
+        </span>
+        <input type="time" placeholder="18：12" style="padding-left: 3em" 
+        ng-model="abnormals.actualDown" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        修正下班
+        </span>
+        <input type="time" placeholder="18：30" style="padding-left: 3em" 
+        ng-model="abnormals.correctDown" onchange="checkTime()" time-input>
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        原&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因
+        </span>
+        <input type="text" placeholder="外出拜访客户" style="padding-left: 3em"
+        ng-model="abnormals.reason">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        状&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;态
+        </span>
+        <input type="text" placeholder="审核中" style="padding-left: 3em"
+        ng-model="abnormals.status">
+      </label>
+    </div>
+      <!-- <div class="list padding-left padding-right" ng-repeat="abnormal in abnormals">
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          姓<span style="margin-left: 2em">名</span>
+          </div>
+          <div class="col col-50 text-center color93">
+            {{abnormal.name}}
+          </div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          工<span style="margin-left: 2em">号</span>
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.ID}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          补卡日期
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.fillDate}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          跨天标记
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.sign}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          实际上班卡
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.actualUp}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          修正上班卡
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.correctUp}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          实际下班卡
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.actualDown}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          修正下班卡
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.correctDown}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          原<span style="margin-left: 2em">因</span>
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.reason}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder" style="line-height: 2.7em;border-bottom: 2px solid #ebebeb">
+          <div class="col col-30 text-justify fz20 bold">
+          状<span style="margin-left: 2em">态</span>
+          </div>
+          <div class="col col-50 text-center color93">{{abnormal.status}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+      </div> -->
+	</ion-content>
+	<ion-footer-bar class="bar bar-footer bar-stable">
+	</ion-footer-bar>
+</ion-view>

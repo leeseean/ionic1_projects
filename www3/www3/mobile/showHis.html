@@ -1,0 +1,62 @@
+<style>
+    .loading-container .loading {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .spinner-ios {
+        text-align: center;
+    }
+    .spinner-android {
+        text-align: center;
+    }
+    .scroll-refresher .ionic-refresher-content .text-pulling {
+        font-size: 10px;
+    }
+    .popup {
+        top: 30%;
+        left: 19%;
+    }
+</style>
+<ion-view title="已办流程" >
+
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+    <div class="bar bar-subheader" style="padding: 0;height: 36">
+        <form class="ui-listview-filter ui-bar-c" role="search">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input type="search" placeholder="搜索" ng-model="filter" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+            </label>
+        </form>
+    </div>
+<ion-content><!--class="has-subheader"-->
+    <ion-refresher on-refresh="doRefresh()" style="padding-top: 100px;" pulling-icon="ion-ios7-arrow-thin-down" pulling-text="下拉刷新">
+    </ion-refresher>
+
+    <div class="list" style="top:36px;">
+
+        <li ng-repeat="workitem in workitems|filter:filter"
+            href="#/{{workitem.id}}"
+            class="item"  ng-click="clickTask(workitem)" style="padding-right: 30px;padding-bottom: 7px;padding-top: 7px;">
+
+            <h2 style="  color: #323232;">{{workitem.processinstname}}-{{ workitem.activityinstname }} </h2>
+
+            <h4 style="  line-height: 2;color: #999999;">说明：{{workitem.processinstdesc}}</h4>
+
+            <h4 style="color: #323232;"><img src="../ionic/img/tubiao01_3.png" style="height: 3.3%;">&nbsp;&nbsp;&nbsp;{{ workitem.creatorname }}<div style="width:55%;float: right;color:rgb(74, 135, 238)"><img src="../ionic/img/tubiao02_3.png" style="height: 3.3%;">&nbsp;&nbsp;&nbsp;{{workitem.arriveTimes}}</div></h4>
+
+            <img src="../ionic/img/tubiao03_3.png"   style="height:20%;right: 11;position: absolute;top: 50%;margin-top: -3px;">
+
+
+        </li>
+
+        <ion-infinite-scroll on-infinite="loadMore()" ng-if="moreDataCanBeLoaded()" distance="90%">
+        </ion-infinite-scroll>
+        <div ng-if="moreDataCanBeLoadedtext()" class="padding list-text" style="  color: rgb(74, 135, 238);">没有更多内容</div>
+
+
+    </div>
+
+</ion-content>
+</ion-view>

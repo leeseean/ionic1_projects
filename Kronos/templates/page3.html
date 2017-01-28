@@ -1,0 +1,81 @@
+<ion-view view-title="个人排班表">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('page4')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="$state.go('page4')">
+        完成
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content>
+    <div class="list list-inset">
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名
+        </span>
+        <input type="text" placeholder="黎明" style="padding-left: 3em"
+        ng-model="demo.name" readonly="readonly">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder1">
+        <span class="input-label fz20 bold">
+        工&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号
+        </span>
+        <input type="text" placeholder="6602220" style="padding-left: 3em" 
+        ng-model="demo.ID" readonly="readonly">
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        开始日期
+        </span>
+        <input type="text" placeholder="2016年5月3日" style="padding-left: 3em" 
+        ng-model="submitData.createDate1" ng-click="selectTime1()">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+      <label class="item item-input noBorder btmBorder2">
+        <span class="input-label fz20 bold">
+        结束日期
+        </span>
+        <input type="text" placeholder="2016年5月10日" style="padding-left: 3em" 
+        ng-model="submitData.createDate2" ng-click="selectTime2()">
+        <i class="icon ion-ios-arrow-right"></i>
+      </label>
+    </div>
+      <!-- <div class="list padding-left padding-right">
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          姓<span style="margin-left: 2em">名</span>
+          </div>
+          <div class="col col-50 text-center color93">{{demo.name}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          工<span style="margin-left: 2em">号</span>
+          </div>
+          <div class="col col-50 text-center color93">{{demo.ID}}</div>
+          <div class="col col-20 text-right"></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder btmBorder" style="line-height: 2.7em">
+          <div class="col col-30 text-justify fz20 bold">
+          开始日期</span>
+          </div>
+          <div class="col col-50 text-center color93">{{demo.startDate}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+        <ion-item class="row height4 noBorder" style="line-height: 2.7em;border-bottom: 2px solid #ebebeb">
+          <div class="col col-30 text-justify fz20 bold">
+          结束日期</span>
+          </div>
+          <div class="col col-50 text-center color93">{{demo.endDate}}</div>
+          <div class="col col-20 text-right"><i class="icon ion-ios-arrow-right"></i></div>
+        </ion-item>
+      </div> -->
+	</ion-content>
+	<ion-footer-bar class="bar bar-footer bar-stable">
+	</ion-footer-bar>
+</ion-view>

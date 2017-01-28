@@ -1,0 +1,99 @@
+<ion-view view-title="我的流程">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('home')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content>
+    <div class="bar item-input-inset bg-gray">
+      <label class="item-input-wrapper bg-white">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="搜索">
+      </label>
+    </div>
+    <ion-item class="pt0 pb0" ng-repeat="myPro in myPros">
+      <div class="row"> 
+        <div class="col col-50 fz16 fw600 padding-left">{{myPro.title}}</div>
+        <div class="col col-50 fz14 text-right colorBlue padding-right">{{myPro.status}}</div>
+      </div>
+      <div class="row">
+        <div class="col col-50 color93 fz14 padding-left">{{myPro.instruction}}</div>
+        <div class="col col-50"></div>
+      </div>
+      <div class="row">
+        <div class="col col-50 padding-left">
+          <i class="icon ion-clock colorOrange fz16"></i>
+          <span class="fw600">{{myPro.time}}</span>
+        </div>
+        <div class="col col-50 text-right">
+        <i class="icon ion-ios-list-outline" style="position: absolute;bottom: 3em"></i>
+        </div>
+      </div>
+    </ion-item>
+    <!-- <ion-item class="pt0 pb0">
+      <div class="row"> 
+        <div class="col col-50 fz20 fw600 padding-left">出差申请流程</div>
+        <div class="col col-50 fz14 text-right colorBlue padding-right">待审</div>
+      </div>
+      <div class="row">
+        <div class="col col-50 color93 fz14 padding-left">说明：1262|出差申请单</div>
+        <div class="col col-50"></div>
+      </div>
+      <div class="row">
+        <div class="col col-50 padding-left">
+          <i class="icon ion-clock colorOrange fz20"></i>
+          <span class="fw600">2016-5-10&nbsp;10:59:26--</span>
+        </div>
+        <div class="col col-50 text-right">
+        <i class="icon ion-ios-list-outline" style="position: absolute;bottom: 3em"></i>
+        </div>
+      </div>
+    </ion-item> -->
+    <!-- <ion-item class="pt0 pb0">
+      <div class="row"> 
+        <div class="col col-50 fz20 fw600 padding-left">请假申请流程</div>
+        <div class="col col-50 fz14 text-right colorBlue padding-right">待审</div>
+      </div>
+      <div class="row">
+        <div class="col col-50 color93 fz14 padding-left">说明：1225|请假申请单</div>
+        <div class="col col-50"></div>
+      </div>
+      <div class="row">
+        <div class="col col-50 padding-left">
+          <i class="icon ion-clock colorOrange fz20"></i>
+          <span class="fw600">2016-4-11&nbsp;10:23:40--</span>
+        </div>
+        <div class="col col-50 text-right">
+        <i class="icon ion-ios-list-outline" style="position: absolute;bottom: 3em"></i>
+        </div>
+      </div>
+    </ion-item> -->
+    <div class="row text-center">
+      <div class="col fz16 colorBlue text-center">没有更多内容</div>
+    </div>
+
+	</ion-content>
+  <ion-tabs class="tabs-stable tabs-icon-top">
+
+      <ion-tab title="待办" icon="ion-ios-alarm-outline" ng-click="$state.go('page11')">
+        <!-- Tab 1 content -->
+      </ion-tab>
+
+      <ion-tab title="发起" icon="ion-ios-compose-outline" ng-click="$state.go('page16')">
+        <!-- Tab 2 content -->
+      </ion-tab>
+
+      <ion-tab title="已办" icon="ion-ios-paper-outline" ng-click="$state.go('page17')">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+      <ion-tab title="我的流程" icon="ion-ios-person">
+        <!-- Tab 3 content -->
+      </ion-tab>
+
+    </ion-tabs>
+
+	
+</ion-view>

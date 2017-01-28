@@ -1,0 +1,79 @@
+<style>
+    .loading-container .loading {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+
+</style>
+<ion-view  title="流程详细" id="detail2">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+
+<!--    <ion-nav-buttons side="right" class="row">
+        &lt;!&ndash;<button ng-click="" class=" button button-icon icon-right ion-home"></button>&ndash;&gt;
+       &lt;!&ndash; <button class="button button-icon button-right button-clear ion-navicon" ng-click="popover.show($event)"></button>&ndash;&gt;
+    </ion-nav-buttons>-->
+
+
+<ion-content class="has-header" style=" background-color: #f0f0f0;">
+
+
+    <div>
+        <li ng-repeat="item1group1 in tagName1group1" class="item" style=" padding-bottom: 7.5px;  padding-top: 9.5px; overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.5rem;">
+
+            {{item1group1.name}}<div style=" float: right;color: #323232;font-size: 1.8rem;"> {{item1group1.value}}</div>
+
+        </li>
+    </div>
+    <div style="padding-top: 22px;">
+        <li ng-repeat="item1 in tagName1" class="item" style=" padding-bottom: 7.5px;  padding-top: 9.5px;overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.5rem;">
+
+            {{item1.name}}<div style="float: right;color: #323232;font-size: 1.8rem;"> {{item1.value}}</div>
+
+        </li>
+    </div>
+<div ng-show="itemLineButton" >
+
+    <div style="font-size: larger;color: rgb(74, 135, 238);  text-align: left; margin-top: 20px;margin-left: 14px; margin-bottom: -40px;">{{itemLineDisPlayName[0]}}</div>
+
+   <div  ng-repeat="it in itemLineDataDetail[0] track by $index">
+      <div style="padding-top: 64px;">
+        <div class="item" style="text-align: center;">第{{($index+1)}}条，共{{itemLineDataDetail[parent_index].length}}条</div>
+
+        <div class="item" style="overflow: auto;text-overflow: clip;white-space: normal;" ng-repeat="item in itemLineDataName[parent_index].displayName track by $index">
+            {{item}}：{{itemLineDataDetail[0][$parent.$index][itemLineDataName[parent_index].fieldName[$index]]}}
+        </div>
+
+      </div>
+   </div>
+
+
+</div>
+    <div id="display1" style="display: none;width: 100%;  padding-left: 14px;padding-top: 11px;color: #666666;font-size: 1.5rem;"> 【表单附件】</div>
+    <div id="display2" style="display: none;padding-top: 1px;  padding-left: 14px;"> <a  ng-repeat="item in fileOut" ng-click="downLoad(item)">{{item.fileName}}</a></div>
+
+
+    <div id="display" style="display: none;">
+
+
+    <div style="text-align: center;padding-top: 20px;width: 100%;float:left;">
+        <button class="button button-balanced" style="height: 16px;width: 95%;border-radius: 4px;border-color: rgba(255, 255, 255, 0);background-color: #34c083;" ng-click="clickTask(pgdetail)">
+            表单详细信息
+        </button>
+    </div>
+   </div>
+    <!------------------------解决手机上显示button问题----------------------->
+    <div style="text-align: center;padding-top: 10;width: 100%;float:left;visibility:hidden;">
+        <button class="button button-balanced" style="height: 18;width: 95%;border-radius: 10px;" >
+        </button>
+    </div>
+
+</ion-content>
+</ion-view>

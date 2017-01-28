@@ -1,0 +1,100 @@
+<ion-view view-title="车辆状态查询">
+  <ion-content>
+    <div class="bar item-input-inset bg_search">
+        <label class="item-input-wrapper bg-white">
+            <i class="icon ion-ios-search placeholder-icon"></i>
+            <input type="search" placeholder="搜索" >
+        </label>
+    </div>
+    <div class="height4 line-height4 text-center status-color">
+        <span class="p2-10 border1 mr-6 white" ng-class="{'bg-status':status1,'white':status1}" ng-click="register()">
+        已登记
+        </span>
+        <span class="p2-17 border1 border-r0 border-l0" ng-class="{'bg-status':status2,'white':status2}" ng-click="pending()">
+        待定
+        </span>
+        <span class="p2-10 border1 ml-6" ng-class="{'bg-status':status3,'white':status3}" ng-click="print()">
+        可打印
+        </span>
+    </div>
+    <div ng-show="status1">
+        <div class="row text-center bg-thead thead-color">
+            <div class="col col-10">排队车数</div>
+            <div class="col col-10">排队号</div>
+            <div class="col col-10">车牌号</div>
+            <div class="col col-10">产品名称</div>
+            <div class="col col-10">车辆状态</div>
+            <div class="col col-10">登记时间</div>
+            <div class="col col-15">手机号</div>
+            <div class="col col-8">吨数</div>
+            <div class="col col-7">空闲</div>
+            <div class="col col-10">鹤位数</div>
+        </div>
+        <div class="row text-center ">
+            <div class="col col-10 height6 line-height6">001</div>
+            <div class="col col-10 height6 line-height6">067</div>
+            <div class="col col-10 pt2">鲁<br>MW1857</div>
+            <div class="col col-10 pt2">
+            93#车用<br>汽油(IV)
+            </div>
+            <div class="col col-10 height6 line-height6">待处理</div>
+            <div class="col col-10 time-color pt2">
+            16-04-18<br>17:26:21
+            </div>
+            <div class="col height6 line-height6 col-15">13212541256</div>
+            <div class="col height6 line-height6 col-8">67</div>
+            <div class="col height6 line-height6 col-7">4</div>
+            <div class="col height6 line-height6 col-10">112</div>
+        </div>
+    </div>
+    <div ng-show="status2">
+        <div class="row text-center bg-thead thead-color">
+            <div class="col col-10">排队车数</div>
+            <div class="col col-10">排队号</div>
+            <div class="col col-10">车牌号</div>
+            <div class="col col-10">产品名称</div>
+            <div class="col col-10">车辆状态</div>
+            <div class="col col-10">登记时间</div>
+            <div class="col col-15">手机号</div>
+            <div class="col col-8">吨数</div>
+            <div class="col col-7">空闲</div>
+            <div class="col col-10">鹤位数</div>
+        </div>
+        <div class="row text-center ">
+            <div class="col col-10 height6 line-height6">001</div>
+            <div class="col col-10 height6 line-height6">067</div>
+            <div class="col col-10 pt2">鲁<br>MW1857</div>
+            <div class="col col-10 pt2">
+            93#车用<br>汽油(IV)
+            </div>
+            <div class="col col-10 height6 line-height6">待处理</div>
+            <div class="col col-10 time-color pt2">
+            16-04-18<br>17:26:21
+            </div>
+            <div class="col height6 line-height6 col-15">13212541256</div>
+            <div class="col height6 line-height6 col-8">67</div>
+            <div class="col height6 line-height6 col-7">4</div>
+            <div class="col height6 line-height6 col-10">112</div>
+        </div>
+        <div class="row text-center bg-even">
+            <div class="col col-10 height6 line-height6">001</div>
+            <div class="col col-10 height6 line-height6">067</div>
+            <div class="col col-10 pt2">鲁<br>MW1857</div>
+            <div class="col col-10 pt2">
+            93#车用<br>汽油(IV)
+            </div>
+            <div class="col col-10 height6 line-height6">待处理</div>
+            <div class="col col-10 time-color pt2">
+            16-04-18<br>17:26:21
+            </div>
+            <div class="col height6 line-height6 col-15">13212541256</div>
+            <div class="col height6 line-height6 col-8">67</div>
+            <div class="col height6 line-height6 col-7">4</div>
+            <div class="col height6 line-height6 col-10">112</div>
+        </div>
+    </div>
+    <div ng-show="status3" class="text-center">
+        暂无可打印
+    </div>
+  </ion-content>
+</ion-view>

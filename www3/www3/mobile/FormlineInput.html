@@ -1,0 +1,67 @@
+<style>
+    .bgimg{background:url( "../ionic/images/icon-time.png") no-repeat;background-size:22px;padding-left:24px;}
+</style>
+<ion-view title="行信息录入" xmlns="http://www.w3.org/1999/html">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon" ng-click="save()">保存</button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+       <!-- <div style="padding-right: 10px;margin-right: 10px;">
+            <div class="list card group-margin">
+                <div class="item" ng-repeat="item in data">{{item.FIELD_DESC}}:
+                    <input style="height: 30px; border: none;" ng-model="item.Value">
+                </div>
+            </div>
+            <button class="button-outline button-block card list" style="padding: 10px;border-radius: 5px;color: #000000;background-color: rgb(251, 127, 16);" ng-click="save()">
+                保存
+            </button>
+        </div>-->
+
+        <div style="padding-right: 7px;margin-right: 10px;padding-left: 7px;margin-left: 10px;padding-top: 10px;">
+       <!-- <div class="list group-margin card" ng-repeat="group in group track by $index" >-->
+
+            <div class="item" ng-repeat="item in groupDisplay">{{item.FIELD_DESC}}：
+                <span ng-if="toggle1(item.LABLE_TYPE,item.ISREADONLY)" >{{item.Value}}</span>
+                <span ng-if="toggle2(item.LABLE_TYPE,item.ISREADONLY)" ><input ng-model="item.Value" style="border: none"></span>
+                <span ng-if="toggle3(item.LABLE_TYPE,item.ISREADONLY)" >
+                    <span class="button-icon bgimg" ng-click="selectTime(item.DISPLAY_NAME)" ng-model="item.Value">{{item.Value}}</span>
+                </span>
+                <span ng-if="toggle4(item.DEFAULT_VALUE,item.LABLE_TYPE,item.ISREADONLY)" >{{item.Value}}</span>
+                <span ng-if="toggle5(item.LABLE_TYPE,item.ID)"  >
+                    <input ng-click="fromline()" style="width: 70%;height: 30px;border: none;" > </input>
+                </span>
+                <span ng-if="toggle6(item.LABLE_TYPE)">
+                    <select style="border: none;width: 70%;" ng-model="item.Value">
+                        <option  ng-repeat="option in Selectlist" >{{option.VALUENAME}}</option>
+                    </select>
+                </span>
+                <span ng-if="toggle7(item.LABLE_TYPE,item.ISREADONLY)" >
+                    <input ng-click="selectone(item.SOURCE_LIST_ID,item.ID,item.formLineId)" style="width: 80%;height: 30px;border: none;" value="{{item.Value}}">
+                </span>
+                <span ng-if="toggle8(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle9(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle10(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle11(item.LABLE_TYPE)" ><textarea ng-model="item.Value"></textarea></span>
+                <span ng-if="toggle12(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle13(item.DEFAULT_VALUE)" >{{item.Value}}</span>
+                <span ng-if="toggle16(item.LABLE_TYPE)">
+                    <input ng-click="selectmore(item.SOURCE_LIST_ID,item.ID,item.FIELD_NAME)" style="width: 70%;height: 30px;border: none;" value="{{item.Value}}">
+                </span>
+                <span ng-if="toggle15(item.LABLE_TYPE)" class="item-toggle">
+                <label class="toggle toggle-balanced sie-toggle">
+                    <input type="checkbox" ng-model="item.Value">
+                    <div class="track">
+                        <span class="toggle-span-on"  >ON</span>
+                        <span class="toggle-span-off" >OFF</span>
+                        <div class="handle"></div>
+                    </div>
+                </label></span>
+            </div>
+        <!--</div>-->
+      </div>
+    </ion-content>
+</ion-view>

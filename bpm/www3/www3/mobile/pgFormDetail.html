@@ -1,0 +1,27 @@
+<style>
+    .item-show{
+        border-width:0;
+        line-height: 15px;
+    }
+</style>
+<ion-view title="{{itemLineDisPlayName[parent_index]}}" xmlns="http://www.w3.org/1999/html">
+    <ion-nav-buttons side="left">
+    <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+
+     </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios7-arrow-right" style="float: right;width: 50%;" ng-click="goNext()">
+
+        </button>
+        <button class="button button-icon icon ion-ios7-arrow-left" style="float: right;width: 50%;" ng-click="goBefore()">
+
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="item" style="overflow: auto;text-overflow: clip;white-space: normal;" ng-repeat="item in itemLineDataName[parent_index].displayName">
+            {{item}}：{{itemLineDataDetail[parent_index][index][itemLineDataName[parent_index].fieldName[$index]]}}
+        </div>
+        <div class="item" style="text-align: center;">第{{(index+1)}}条，共{{itemLineDataDetail[parent_index].length}}条</div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,136 @@
+.ion-chevron-left:before{
+    content: "";
+    width: 10px;
+    height: 18px;
+    background-size: 10px 18px;
+    margin-top: 13px;
+    overflow: hidden;
+    background-image: url("../img/return.png");
+}
+.ion-ios-arrow-up:before{
+    content: "";
+    width: 17px !important;
+    height: 8px;
+    background-size: 100%;
+    margin-top: 13px;
+    background-image: url("../img/up_fold_blue.png");
+}
+.ion-ios-arrow-down:before{
+    content: "";
+    width: 17px !important;
+    height: 8px;
+    background-size: 100%;
+    margin-top: 13px;
+    background-image: url("../img/down_unfold.png");
+}
+
+.list-vivo-attach span{
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-image: url("../img/attach.png");
+    background-position: center;
+    display: block;
+    width: 80%;
+    margin-left: 10%;
+    height: 100%;
+}
+/*.list-vivo-btn {
+    margin-left: 5px;
+    padding: 0;
+    width: 15%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    height: 100%;
+    text-align: center;
+}
+.list-vivo-btn-up{
+    background-image: url("../img/up_fold.png");
+}
+.list-vivo-btn-down{
+    background-image: url("../img/down_unfold.png");
+}*/
+/*.list-vivo-btn.activated span,
+.list-vivo-btn.active span,
+.list-vivo-btn-active span{
+    background-image: url("../img/0_1_11.png");
+}*/
+.vivo_list_btn_agree span{
+
+    background-image: url("../img/footer_btn_2.png");
+}
+.vivo_list_btn_disagree span{
+    background-image: url("../img/footer_btn_3.png");
+}
+.vivo_list_btn_agree.activated span,
+.vivo_list_btn_agree.active span,
+.vivo_list_btn_agree-active span{
+    background-image: url("../img/footer_btn_2_1.png");
+}
+.vivo_list_btn_disagree.activated span,
+.vivo_list_btn_disagree.active span,
+.vivo_list_btn_disagree-active span{
+    background-image: url("../img/footer_btn_3_1.png");
+}
+.vivo_footer_btn1 span{
+    background-image: url("../img/button_opinion.png");
+}
+/*.vivo_footer_btn1.selected span{
+    background-image: url("../img/footer_btn_1.png");
+}*/
+.vivo_footer_btn2 span{
+    background-image: url("../img/footer_btn_2.png");
+}
+.vivo_footer_btn2.activated span,
+.vivo_footer_btn2.active span,
+.vivo_footer_btn2-active span{
+    background-image: url("../img/footer_btn_2_1.png");
+}
+.vivo_footer_btn3.activated span,
+.vivo_footer_btn3.active span,
+.vivo_footer_btn3-active span{
+    background-image: url("../img/footer_btn_3_1.png");
+}
+.vivo_footer_btn3 span{
+    background-image: url("../img/footer_btn_3.png");
+}
+/*.vivo_footer_btn5.activated span,
+.vivo_footer_btn5.active span,
+.vivo_footer_btn5-active span{
+    background-image: url("../img/footer_btn_3_1.png");
+}*/
+.vivo_footer_btn5 span{
+    background-image: url("../img/footer_btn_5.png");
+}
+.vivo_footer_btn4 span{
+
+    background-image: url("../img/button_again.png");
+}
+.vivo_footer_btn1 span{
+    background-size: 18px;
+    background-repeat: no-repeat;
+}
+.vivo_footer_btn2 span,
+.vivo_footer_btn3 span,
+.vivo_footer_btn4 span,
+.vivo_footer_btn5 span{
+    background-size: 85%;
+    background-repeat: no-repeat;
+}
+.vivo-bpm-footer-input-bg{
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url("../img/inputbox.png");
+}
+.attach-span{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-image: url("../img/attach.png");
+    background-position: center;
+}

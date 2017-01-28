@@ -1,0 +1,21 @@
+.fl{
+    float: left;
+}
+.formline-style{
+    line-height: 35px;
+    width: 30%;
+    text-align: center;
+}
+
+
+.tab-item.tab-item-active {
+    opacity: 1;
+    color: rgb(41, 117, 244);
+}
+
+.bar .buttons {
+    display:block;
+}
+.button.button-balanced ,.button.button-energized{
+    border-radius: 10px;
+}

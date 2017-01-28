@@ -1,0 +1,25 @@
+<ion-view view-title='代办'>
+    <ion-content>
+        <ion-refresher on-refresh="doRefresh()"
+                       pulling-text="下拉刷新..."
+                       refreshing-text="正在刷新!"
+                       refreshing-icon="ion-loading-b">
+
+        </ion-refresher>
+        <div class="list todoList">
+            <div class="item" ng-repeat="item in list" ng-click="click(item)">
+                <div class="circle {{item.pType=='expense'?'bg-orange':'bg-blue'}} ">{{item.pTypeName.substring(0,2)}}</div>
+                <div class="border-bottom" style="line-height: 34px;">
+                    <span class="pType">{{item.pTypeName}}</span>
+                    <span class="pTitle">{{item.title}}</span>
+                </div>
+                <div style="padding-top: 5px;">
+                    <span class="name r-block"><i class="icon ion-person"></i> {{item.createBy}}</span>
+                    <span class="dept r-block"><i class="icon ion-social-codepen-outline"></i> {{item.createTime}}</span>
+                    <span class="date">2016-01-15<i class="icon ion-ios-arrow-down"></i></span>
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+</ion-view>

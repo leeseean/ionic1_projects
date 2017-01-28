@@ -1,0 +1,49 @@
+<ion-view class="stable-bg">
+
+    <ion-content>
+
+        <ion-refresher pulling-text="下拉刷新" on-refresh="getEcpPaymentRecord(true)"></ion-refresher>
+
+        <div class="list">
+
+            <div collection-repeat="record in records" style="padding-top: 10px;">
+                <div class="item item-divider text-center" style="background-color: grey;">
+                    账户:{{record.CustomerBankAccountNum}}
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">充值日期</span>
+
+                    <div class="text-center parent-65">{{record.ReceiptDate}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">金额</span>
+
+                    <div class="text-center parent-65">￥{{record.Amount}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">摘要</span>
+
+                    <div class="text-center parent-65">{{record.Attribute2}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">用途</span>
+
+                    <div class="text-center parent-65">{{record.Attribute3}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">附言</span>
+
+                    <div class="text-center parent-65">{{record.Attribute4}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <ion-infinite-scroll on-infinite="getEcpPaymentRecord(false)" distance="10%"
+                             ng-if="canLoadMore"></ion-infinite-scroll>
+
+        <loading-toast ng-show="showLoading"></loading-toast>
+    </ion-content>
+
+</ion-view>

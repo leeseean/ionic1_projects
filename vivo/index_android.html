@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+      <link href="css/ionic.css" rel="stylesheet">
+      <link href="css/imgCss.css" rel="stylesheet">
+      <script src="js/ionic.bundle.min.js"></script>
+      <script src="js/common.js"></script>
+
+      <script>
+          var appMain = angular.module('app', ['ionic']);
+          var sshFileUrl ="";
+          var t = (new Date()).getTime();
+          //document.write('<link href="css/all.css?r='+t+'" rel="stylesheet">');
+          document.write('<link href="css/componentCss.css?r='+t+'" rel="stylesheet">');
+          document.write('<link href="css/vivo.css?r='+t+'" rel="stylesheet">');
+          document.write('<script type="text/javascript"  src="js/config.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/util.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/main.js?r='+t+'"></scr'+'ipt>');
+          //document.write('<script type="text/javascript"  src="js/all.js?r='+t+'"></scr'+'ipt>');
+         /* document.write('<script type="text/javascript"  src="js/plm_detail.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/Process_ComDocManage.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/CompanyInstitution.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/MeetingResolution.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/process_GZLLD0.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/AystemicAudit.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/TXBMZD.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/RewardNoticeFlow.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/PunishmentNoticeFlow.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/LYTDRM.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/SMZZFG.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/ProdouctPlanning.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/ZDSXIP.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/HYJYIP.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/CompanyOrganizationFlow.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/XZFG00.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/DZJSGH.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/LWKZSP.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/XMXMTZ.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/JGMJXX.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/JHBG.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/BGTZ.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/WLQLWM.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/LDZC00.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/GDZC00.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/DZYHP0.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/XMRWXD.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/GWGZSC.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/ZYZDGL.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/CXWJMK.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/TXZYGF.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/ZYZDCZ.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/EWGSSQ.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/YYSYJJJD.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/YYSYJGH.js?r='+t+'"></scr'+'ipt>');
+          document.write('<script type="text/javascript"  src="js/TSQKZC.js?r='+t+'"></scr'+'ipt>');*/
+
+          function GetQueryString(name)
+          {
+              var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+              var r = window.location.search.substr(1).match(reg);
+              if(r!=null)return  unescape(r[2]); return null;
+          }
+          var hrefdocumentId = GetQueryString("documentId");
+          var documentType = GetQueryString("documentType");
+          if(documentType){
+              documentType = documentType.replace("\\","");
+              documentType = documentType.replace("\\","");
+          }
+      </script>
+      <script src="js/process_GZLLD0.js"></script>
+      <!--<script src="js/plm_detail.js"></script>-->
+      <!--<script src="js/main.js"></script>
+      <script src="js/plm_detail.js"></script>
+      <script src="js/Process_ComDocManage.js"></script>
+      <script src="js/CompanyInstitution.js"></script>-->
+     <!-- <script src="js/process_GZLLD0.js"></script>-->
+  </head>
+  <body ng-app id="app">
+  <ion-nav-view></ion-nav-view>
+  <script id="templates/error.html" type="text/ng-template">
+      <ion-view>
+          <ion-content class="stable-bg">
+              <div class="vivo-list-nodata">暂不支持该类型流程</div>
+          </ion-content>
+      </ion-view>
+  </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<ion-content>
+
+    <div class="light-bg">
+
+        <ion-refresher pulling-text="下拉刷新" on-refresh="getLogs(true)"></ion-refresher>
+
+        <div class="list">
+            <div class="item item-text-wrap" ng-repeat="i in [1,2,3,4,5,6,7]">
+                全民读书月启动 京博推”诵读弟子规”系列活动
+                <p class="text-right"><a class="subdued">2016-04-25</a></p>
+            </div>
+        </div>
+
+        <ion-infinite-scroll on-infinite="getLogs(false)" distance="1%" ng-if="false"></ion-infinite-scroll>
+    </div>
+
+</ion-content>

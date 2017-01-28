@@ -1,0 +1,27 @@
+<ion-view title="表单行信息" xmlns="http://www.w3.org/1999/html">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button-icon botton-outline" style="  margin-top: 5px;color:#FFF;" ng-click="creat()">
+            <span>新增</span>
+        </button>
+        <button class="button-icon botton-outline" style="  margin-top: 5px;color:#FFF;margin-right: 0.5rem " ng-click="save()">
+            <span>完成</span>
+        </button>
+    </ion-nav-buttons>
+    <div class="bar bar-subheader" style="padding: 0;height: 36">
+        <div class="fl formline-style" style="margin-left: 5%;">{{data[0].FIELD_DESC}}</div>
+        <div class="fl formline-style">{{data[1].FIELD_DESC}}</div>
+        <div class="fl formline-style" style="margin-right: 5%">{{data[2].FIELD_DESC}}</div>
+    </div>
+    <ion-content class="has-subheader"  style="top:78px;">
+        <div ng-repeat="item in inputdata" ng-click="reInput()">
+            <div class="fl formline-style" style="margin-left: 5%;">{{item[0].VALUE}}</div>
+            <div class="fl formline-style">{{item[1].VALUE}}</div>
+            <div class="fl formline-style" style="margin-right: 5%">{{item[2].VALUE}}</div>
+        </div>
+    </ion-content>
+</ion-view>

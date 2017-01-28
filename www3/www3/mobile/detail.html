@@ -1,0 +1,102 @@
+<style>
+    .loading-container .loading {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    .ng-hide:not(.ng-hide-animate) {/*解决测试环境中自动在<bar bar-footer>加ng-hide的问题*/
+
+    }
+    .item {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+    }
+    .button.button-balanced, .button.button-energized {
+        border-radius: 4px;
+    }
+</style>
+<ion-view  title="流程详细" id="detail">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()"></button>
+    </ion-nav-buttons>
+
+
+<ion-content class="has-header" style=" background-color: #f0f0f0;">
+
+<div>
+    <li ng-repeat="item1group1 in tagName1group1" class="item" style="  padding-bottom: 7.5px;  padding-top: 9.5px;overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.5rem;">
+
+        {{item1group1.name}}<div style="float: right;color: #323232;font-size: 1.8rem;"> {{item1group1.value}}</div>
+
+    </li>
+</div>
+<div style="padding-top: 22px;">
+    <li ng-repeat="item1 in tagName1" class="item" style="  padding-bottom: 7.5px;padding-top: 9.5px;overflow: auto;text-overflow: clip;white-space: normal;color: #666666;font-size: 1.5rem;">
+
+    {{item1.name}}<div style="float: right;color: #323232;font-size: 1.8rem;"> {{item1.value}}</div>
+
+    </li>
+</div>
+    <div ng-show="itemLineButton" >
+
+        <div style="font-size: larger;color: rgb(74, 135, 238);  text-align: left; margin-top: 20px;margin-left: 14px; margin-bottom: -40px;">{{itemLineDisPlayName[0]}}</div>
+
+        <div  ng-repeat="it in itemLineDataDetail[0] track by $index">
+            <div style="padding-top: 64px;">
+                <div class="item" style="text-align: center;">第{{($index+1)}}条，共{{itemLineDataDetail[parent_index].length}}条</div>
+
+                <div class="item" style="overflow: auto;text-overflow: clip;white-space: normal;" ng-repeat="item in itemLineDataName[parent_index].displayName track by $index">
+                    {{item}}：{{itemLineDataDetail[0][$parent.$index][itemLineDataName[parent_index].fieldName[$index]]}}
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    <div id="display1" style="display: none;width: 100%;  padding-left: 14px;padding-top: 11px;color: #666666;font-size: 1.5rem;"> 【表单附件】</div>
+    <div id="display2" style="display: none;padding-top: 1px;  padding-left: 14px;"> <a  ng-repeat="item in fileOut" ng-click="downLoad(item)">{{item.fileName}}</a></div>
+
+
+   <div id="display" style="display: none;">
+
+  <div style="text-align: center;padding-top: 20px  ;width: 100%;float:left;">
+    <button class="button button-balanced" style="height: 16px;width: 95%;border-color: rgb(214, 214, 214);  background-color: #34c083;
+" ng-click="clickTask(pgdetail)">
+        表单详细信息
+    </button>
+   </div>
+</div>
+   <!------------------------解决手机上显示button问题----------------------->
+    <div style="text-align: center;padding-top: 30;width: 100%;float:left;visibility:hidden;">
+        <button class="button button-balanced" style="height: 40;width: 95%;" >
+        </button>
+    </div>
+</ion-content>
+
+</ion-view>
+<div class="bar bar-footer" ng-show="isTodo" style="width: 100%;height: 49;  border-color: #b2b2b2;background-color: #f8f8f8;  padding: 0;">
+    <div ng-if="html=='sb'" style="width:100%;text-align: center; "><!--驳回状态显示的模板-->
+        <button class="ion-ios7-checkmark-outline " ng-click="Submit()" style="width:14.2rem;height: 100%; font-size: 3.5rem; border: none; background-color: rgb(248, 248, 248);  color: rgb(74, 135, 238);" >
+            <div style="  font-size: 1.8rem;line-height: 186%;float: right;">提交</div>
+        </button>
+    </div>
+    <div ng-if="html=='sp'" style="width:100%;text-align: center;">
+        <div style="width:25%;text-align: center;  float: left; ">
+            <button class="ion-ios7-checkmark-outline " ng-click="approval()" style="height: 100%; font-size: 2.7rem; border: none; background-color: rgb(248, 248, 248);  color: rgb(74, 135, 238);" ><div style="font-size:1.2rem;">审批</div></button>
+        </div>
+        <div style="width:25%;text-align: center;  float: left;">
+            <button class="ion-ios7-close-outline" ng-click="reject()" style="height: 100%; font-size: 2.7rem; border: none ;background-color: rgb(248, 248, 248);color: rgb(255, 22, 22);" ><div style="font-size: 1.2rem;">驳回</div></button>
+        </div>
+        <div style="width:25%;text-align: center;  float: left;">
+            <button class="ion-ios7-reload" ng-click="turnTodo()" style="height: 100%; font-size: 2.7rem;  border: none;background-color: rgb(248, 248, 248);  color: rgb(74, 135, 238);" ><div style="font-size:1.2rem;">转办</div></button>
+        </div>
+        <div style="width:25%;text-align: center;  float: left;">
+            <button class="ion-ios7-chatboxes-outline " ng-click="communicate()" style="height: 100%; border: none;font-size: 2.7rem;  background-color: rgb(248, 248, 248);  color: rgb(74, 135, 238);" ><div style="font-size: 1.2rem;">沟通</div></button>
+        </div>
+    </div>
+</div>
+
+<!--
+<ion-footer-bar style="height: 49;  border-color: #b2b2b2;background-color: #f8f8f8;  padding: 0;">
+
+</ion-footer-bar>-->

@@ -1,0 +1,27 @@
+<style>
+    .item{overflow: visible !important;}
+    .popup {
+        top: 30%;
+        left: 19%;
+    }
+</style>
+<ion-view title="发起流程" >
+    <ion-nav-buttons side="left" class="heard-bar">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="backOut()">
+
+
+        </button>
+    </ion-nav-buttons>
+    <div class="tabs tabs-stable bar-subheader">
+        <a       ng-repeat="workspace in PARENTSNAME track by $index"
+                 ng-click="number($index)"
+                 class="tab-item">
+            {{workspace}}
+        </a>
+    </div>
+    <ion-content class="has-header scroll-content">
+        <div class="list card has-header">
+            <a ng-repeat="form in MENULABEL track by $index" ng-click="goform($index)" class="item">{{form.MENULABEL}}</a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+<style>
+    .bar-footer {
+        background-color: rgb(243, 241, 241);
+    }
+</style>
+<ion-view  title="选择列表">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon icon ion-ios7-arrow-thin-left" ng-click="back()">
+        </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <a ng-click="search()" class="button button-icon icon-right">查询</a>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+
+        <form class="ui-listview-filter ui-bar-c" role="search">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input id="search" type="search" placeholder="请输入关键字" ng-model="filter" class="ng-valid ng-dirty ng-valid-parse ng-touched">
+            </label>
+        </form>
+
+        <div class="list">
+            <li ng-repeat="displays in display|filter:filter"
+                class="item item-thumbnail-right"  ng-click="chose($index)" style="padding-right: 30px">
+                <div class="list" ng-repeat="item in displays" style="margin-bottom: 1%;">
+                    <div style="   font-weight: bold;float: left">{{item.FIELDNAME}}：</div>{{item.Value}}
+                </div>
+            </li>
+        </div>
+
+    </ion-content>
+    <ion-footer-bar>
+        <div style="width: 100%;text-align: center">
+            选择查询条件
+            <select id="searchCondition" style="text-align: left;width: 50%; height: 30px;border-color: rgb(74, 135, 238);">
+                <option ng-repeat="searchCondition1 in searchCondition">
+                    {{ searchCondition1.DISPLAYNAME }}
+                </option>
+            </select>
+        </div>
+
+    </ion-footer-bar>
+</ion-view>

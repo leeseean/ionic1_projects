@@ -1,0 +1,49 @@
+<ion-view class="stable-bg">
+    <ion-content>
+        <div class="list">
+            <div class="item text-center no-top-padding">
+                <span class="icon-png icon-activity"></span>
+                <span style="vertical-align: middle;">活动须知</span>
+            </div>
+
+            <div class="item" style="margin-top: 10px;">
+                <div class="box">
+                    <div>
+                        <div class="text-right">开始时间</div>
+                        <div class="text-right">{{activityDetailData.EcpActivityVO[0].StartDateActive}}</div>
+                    </div>
+
+                    <span class="icon-png icon-activity-clock" style="margin: 10px;"></span>
+
+                    <div>
+                        <div class="text-left">结束时间</div>
+                        <div class="text-left">{{activityDetailData.EcpActivityVO[0].EndDateActive}}</div>
+                    </div>
+                </div>
+                <div class="text-center padding-top">
+                    当前可用活动数量:{{activityCount| number:2}}
+                </div>
+            </div>
+
+            <div style="margin-top: 10px;" ng-repeat="product in products">
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">产品名称</span>
+
+                    <div class="text-center parent-65">{{product.ProductName}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">挂牌价</span>
+
+                    <div class="assertive text-center parent-65">￥{{product.UnitPrice| number:2}}</div>
+                </div>
+                <div class="item item-input no-padding">
+                    <span class="input-label text-center border-right">优惠价</span>
+
+                    <div class="assertive text-center parent-65">￥{{product.PreferencePrice| number:2}}</div>
+                </div>
+            </div>
+
+            <loading-toast ng-show="showLoading"></loading-toast>
+        </div>
+    </ion-content>
+</ion-view>

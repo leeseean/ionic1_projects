@@ -1,0 +1,113 @@
+<ion-view view-title="考勤记录">
+<ion-nav-bar class="bar bar-dark">
+	<ion-nav-buttons side="left">
+      <button class="button button-clear" ng-click="$state.go('home')">
+        <i class="icon ion-ios-arrow-back"></i>
+      </button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+      <button class="button button-clear" ng-click="doSomething()">
+        
+      </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+	<ion-content class="bg-gray">
+    <div class="row bg-white height4 mt5" style="line-height: 2.7em">
+      <div class="col col-30 fz20 text-left colorLight">
+      {{attendances['date'].year}}
+      </div>
+      <div class="col col-40 fz24 text-center colorBlue fw600">
+      {{attendances['date'].curMonth}}&nbsp;&nbsp;{{attendances[date].year}}
+      </div>
+      <div class="col col-30 fz20 text-right colorLight">
+      {{attendances['date'].nextMonth}}
+      </div>
+    </div>
+    <div class="list list-inset card" ng-repeat="forLeave in attendances['forLeaves']">
+      <ion-item class="row fz20 fw400 pl20 colorBlack">
+        <div class="col col-20 ">{{forLeave.day}}</div>
+        <div class="col col-20">{{forLeave.week}}</div>
+        <div class="col col-50">
+        提交请假<span class="colorBlue">&nbsp;{{forLeave.instruction}}&nbsp;</span>天
+        </div>
+        <div class="col col-10 text-right"><i class="fz24 icon ion-ios-arrow-forward"></i></div>
+      </ion-item>
+     <!--  <ion-item class="row fz20 fw400 pl20 colorBlack">
+        <div class="col col-20">08-18</div>
+        <div class="col col-20">周二</div>
+        <div class="col col-50">
+        提交请假<span class="colorBlue">&nbsp;0.5&nbsp;</span>天
+        </div>
+        <div class="col col-10 text-right"><i class="fz24 icon ion-ios-arrow-forward"></i></div>
+      </ion-item> -->
+    </div>
+    <div class="list list-inset card">
+      <ion-item class="row text-center pt0 bg-blue white fz12">
+        <div class="col borderRight col-20" style="line-height: 3">日期/星期</div>
+        <div class="col borderRight col-15">上午开<br>始时间</div>
+        <div class="col borderRight col-15">上午结<br>束时间</div>
+        <div class="col borderRight col-15">下午开<br>始时间</div>
+        <div class="col borderRight col-15">下午结<br>束时间</div>
+        <div class="col col-10 borderRight" style="line-height: 3">数量</div>
+        <div class="col col-10" style="line-height: 3">备注</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12" ng-repeat="detail in attendances['details']">
+        <div class="col borderRight col-20">{{detail.date}}</div>
+        <div class="col borderRight col-15">{{detail.amStart}}</div>
+        <div class="col borderRight col-15">{{detail.amEnd}}</div>
+        <div class="col borderRight col-15">{{detail.pmStart}}</div>
+        <div class="col borderRight col-15">{{detail.pmEnd}}</div>
+        <div class="col col-10 borderRight">{{detail.amount}}</div>
+        <div class="col col-10 colorBlue" ng-click="$state.go('page9')">
+        {{detail.remark}}
+        </div>
+      </ion-item>
+      <!-- <ion-item class="row text-center color93  fz12">
+        <div class="col borderRight col-20">03/五</div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col col-10 borderRight"></div>
+        <div class="col col-10 colorBlue">矿工</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">04/六</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">18：00</div>
+        <div class="col col-10 borderRight">7</div>
+        <div class="col col-10 colorBlue">早退</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">05/日</div>
+        <div class="col borderRight col-15">8：30</div>
+        <div class="col borderRight col-15">11：30</div>
+        <div class="col borderRight col-15">13：30</div>
+        <div class="col borderRight col-15">17：30</div>
+        <div class="col col-10 borderRight">7</div>
+        <div class="col col-10 colorBlue">早退</div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12">
+        <div class="col borderRight col-20">06/一</div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col col-10 borderRight"></div>
+        <div class="col col-10 colorBlue"></div>
+      </ion-item>
+      <ion-item class="row text-center color93 fz12 pb0">
+        <div class="col borderRight col-20">07/二</div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col borderRight col-15"></div>
+        <div class="col col-10 borderRight"></div>
+        <div class="col col-10 colorBlue"></div>
+      </ion-item> -->
+    </div>
+	</ion-content>
+	
+</ion-view>
